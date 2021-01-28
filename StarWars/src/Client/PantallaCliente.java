@@ -46,24 +46,90 @@ public class PantallaCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnNextPlayer = new javax.swing.JButton();
+        txtAreaConsola = new java.awt.TextArea();
+        txtFieldConsola = new java.awt.TextField();
+        btnSend = new javax.swing.JButton();
+        lblPlayerEnemyName = new javax.swing.JLabel();
+        lblPlayerName = new javax.swing.JLabel();
+        jPanelPropio = new javax.swing.JPanel();
+        jPanelEnemigos = new javax.swing.JPanel();
         lblfondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1440, 950));
+        setPreferredSize(new java.awt.Dimension(1444, 950));
+        getContentPane().setLayout(null);
+
+        btnNextPlayer.setText("Next");
+        getContentPane().add(btnNextPlayer);
+        btnNextPlayer.setBounds(1170, 50, 90, 40);
+        getContentPane().add(txtAreaConsola);
+        txtAreaConsola.setBounds(140, 640, 1150, 230);
+        getContentPane().add(txtFieldConsola);
+        txtFieldConsola.setBounds(140, 870, 1080, 30);
+
+        btnSend.setText("Send");
+        getContentPane().add(btnSend);
+        btnSend.setBounds(1220, 870, 73, 30);
+
+        lblPlayerEnemyName.setBackground(new java.awt.Color(255, 255, 255));
+        lblPlayerEnemyName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblPlayerEnemyName.setForeground(new java.awt.Color(204, 204, 0));
+        lblPlayerEnemyName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayerEnemyName.setText("Enemy name");
+        lblPlayerEnemyName.setOpaque(true);
+        getContentPane().add(lblPlayerEnemyName);
+        lblPlayerEnemyName.setBounds(920, 50, 230, 40);
+
+        lblPlayerName.setBackground(new java.awt.Color(255, 255, 255));
+        lblPlayerName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblPlayerName.setForeground(new java.awt.Color(204, 204, 0));
+        lblPlayerName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayerName.setText("Player name");
+        lblPlayerName.setOpaque(true);
+        getContentPane().add(lblPlayerName);
+        lblPlayerName.setBounds(260, 50, 230, 40);
+
+        jPanelPropio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jPanelPropio.setOpaque(false);
+
+        javax.swing.GroupLayout jPanelPropioLayout = new javax.swing.GroupLayout(jPanelPropio);
+        jPanelPropio.setLayout(jPanelPropioLayout);
+        jPanelPropioLayout.setHorizontalGroup(
+            jPanelPropioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 498, Short.MAX_VALUE)
+        );
+        jPanelPropioLayout.setVerticalGroup(
+            jPanelPropioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 498, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanelPropio);
+        jPanelPropio.setBounds(140, 110, 500, 500);
+
+        jPanelEnemigos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        jPanelEnemigos.setOpaque(false);
+
+        javax.swing.GroupLayout jPanelEnemigosLayout = new javax.swing.GroupLayout(jPanelEnemigos);
+        jPanelEnemigos.setLayout(jPanelEnemigosLayout);
+        jPanelEnemigosLayout.setHorizontalGroup(
+            jPanelEnemigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 498, Short.MAX_VALUE)
+        );
+        jPanelEnemigosLayout.setVerticalGroup(
+            jPanelEnemigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 498, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanelEnemigos);
+        jPanelEnemigos.setBounds(790, 110, 500, 500);
 
         lblfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ClientFondo.jpg"))); // NOI18N
         lblfondo.setMaximumSize(new java.awt.Dimension(1345, 817));
         lblfondo.setMinimumSize(new java.awt.Dimension(1345, 817));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblfondo, javax.swing.GroupLayout.DEFAULT_SIZE, 1408, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblfondo, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
-        );
+        getContentPane().add(lblfondo);
+        lblfondo.setBounds(0, 0, 1440, 930);
 
         pack();
         setLocationRelativeTo(null);
@@ -105,6 +171,14 @@ public class PantallaCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNextPlayer;
+    private javax.swing.JButton btnSend;
+    private javax.swing.JPanel jPanelEnemigos;
+    private javax.swing.JPanel jPanelPropio;
+    private javax.swing.JLabel lblPlayerEnemyName;
+    private javax.swing.JLabel lblPlayerName;
     private javax.swing.JLabel lblfondo;
+    private java.awt.TextArea txtAreaConsola;
+    private java.awt.TextField txtFieldConsola;
     // End of variables declaration//GEN-END:variables
 }

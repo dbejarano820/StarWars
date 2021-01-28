@@ -18,13 +18,13 @@ public class Player {
     public String nombre;
     public boolean gameReady;
     public boolean krakenDefense;
-
+    public int Dinero;
+    
+    
     public Player(String nombre){
         this.nombre  = nombre;
         gameReady = false;
-
-
-        
+        Dinero = 4000;       
 
     }
   
