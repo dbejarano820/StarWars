@@ -24,7 +24,14 @@ public class PantallaCliente extends javax.swing.JFrame {
     
     public Cliente refCliente;
     String nombreTurno;
-    
+    String pathMundo = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Planet.png";
+    String pathConector = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Conector.png";
+    String pathMercado = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Market.jpg";
+    String pathMina = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Mina.jpg";
+    String pathArmory = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Armory.jpg";
+    String pathTemple = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Temple.jpg";
+    String pathHoyoNegro = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\HoyoNegro.jpg";
+
     public PantallaCliente() {
         initComponents();
         nombreTurno = ""; 
@@ -70,6 +77,81 @@ public class PantallaCliente extends javax.swing.JFrame {
     }     
     
     
+    public void updateTableroPropio(){
+        
+         for(int row = 0; row < refCliente.tableroCliente.length; row++)
+            for(int col = 0; col < refCliente.tableroCliente[row].length; col++){
+                
+                if(refCliente.tableroCliente[row][col].ID == 1){
+                    refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathMundo).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+                    if(refCliente.tableroCliente[row][col].explotado == 1)
+                        refCliente.tableroCliente[row][col].refLabel.setBackground(Color.red);    
+                }
+                else if(refCliente.tableroCliente[row][col].ID == 2){
+                     refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathConector).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+                    if(refCliente.tableroCliente[row][col].explotado == 1)
+                        refCliente.tableroCliente[row][col].refLabel.setBackground(Color.red);                     
+                }
+                 else if(refCliente.tableroCliente[row][col].ID == 3){
+                     refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathMercado).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+                    if(refCliente.tableroCliente[row][col].explotado == 1)
+                        refCliente.tableroCliente[row][col].refLabel.setBackground(Color.red);                     
+                }               
+                else if(refCliente.tableroCliente[row][col].ID == 4){
+                    refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathMina).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+                    if(refCliente.tableroCliente[row][col].explotado == 1)
+                        refCliente.tableroCliente[row][col].refLabel.setBackground(Color.red);                      
+                }
+                else if(refCliente.tableroCliente[row][col].ID == 5){
+                    refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathArmory).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+                    if(refCliente.tableroCliente[row][col].explotado == 1)
+                        refCliente.tableroCliente[row][col].refLabel.setBackground(Color.red);                      
+                }
+                else if(refCliente.tableroCliente[row][col].ID == 6){
+                     refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathTemple).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+                    if(refCliente.tableroCliente[row][col].explotado == 1)
+                        refCliente.tableroCliente[row][col].refLabel.setBackground(Color.red);                     
+                }
+                else if(refCliente.tableroCliente[row][col].ID == 7){
+                     refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathHoyoNegro).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));                  
+                }                
+            }       
+    }
+    
+     public void updateTableroEnemigo(){
+        
+         for(int row = 0; row < refCliente.tableroEnemigo.length; row++)
+            for(int col = 0; col < refCliente.tableroEnemigo[row].length; col++){
+ 
+                if(refCliente.tableroEnemigo[row][col].explotado == 1)
+                        refCliente.tableroEnemigo[row][col].refLabel.setBackground(Color.red);
+
+                if(refCliente.tableroEnemigo[row][col].visible == 1 || refCliente.tableroEnemigo[row][col].revelada == 1){
+                
+                    if(refCliente.tableroEnemigo[row][col].ID == 1)
+                         refCliente.tableroEnemigo[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathMundo).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+           
+                    else if(refCliente.tableroEnemigo[row][col].ID == 2)
+                         refCliente.tableroEnemigo[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathConector).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));                             
+            
+                    else if(refCliente.tableroEnemigo[row][col].ID == 3)
+                         refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathMercado).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));               
+                
+                    else if(refCliente.tableroCliente[row][col].ID == 4)
+                         refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathMina).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));              
+
+                    else if(refCliente.tableroCliente[row][col].ID == 5)
+                         refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathArmory).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));              
+                
+                    else if(refCliente.tableroCliente[row][col].ID == 6)
+                         refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathTemple).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));  
+                      
+                    else if(refCliente.tableroCliente[row][col].ID == 7)
+                         refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathHoyoNegro).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));                                              
+                }         
+            }                       
+    }       
+      
   /*  
      public void colorMatriz(){
         

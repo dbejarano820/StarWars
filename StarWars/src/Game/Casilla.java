@@ -17,6 +17,7 @@ public class Casilla {
     public JLabel refLabel;
     public int explotado;
     public int visible;
+    public int revelada;
     public int ID;
     
     /*
@@ -37,6 +38,7 @@ public class Casilla {
         componente = null;
         explotado = 0;
         visible = 0;
+        revelada = 0;
     }
     
     public JLabel generateLabel(){      // se utiliza para generar el reflabel de las casillas del cliente, el player no lo necesita
