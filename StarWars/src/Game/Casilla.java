@@ -13,11 +13,21 @@ import javax.swing.JLabel;
  */
 public class Casilla {
     
-    Componentes componente;
+    public Componentes componente;
     public JLabel refLabel;
-    int explotado;
-    int visible;
-    int ID;
+    public int explotado;
+    public int visible;
+    public int ID;
+    
+    /*
+    1 = Mundo
+    2 = Conector
+    3 = Mercado
+    4 = Mina
+    5 = Armeria
+    6 = Templo
+    7 = Hoyo Negro
+    */
 
     public void setID(int ID) {
         this.ID = ID;
