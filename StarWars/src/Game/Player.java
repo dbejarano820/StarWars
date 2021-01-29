@@ -16,9 +16,9 @@ public class Player {
    
 
     public String nombre;
-    public boolean gameReady;
-    public boolean krakenDefense;
+    public boolean gameReady;;
     public int Dinero;
+    
     
     
     public Player(String nombre){

@@ -50,6 +50,10 @@ public class PantallaCliente extends javax.swing.JFrame {
         txtAreaConsola = new java.awt.TextArea();
         txtFieldConsola = new java.awt.TextField();
         btnSend = new javax.swing.JButton();
+        lblPlayerName1 = new javax.swing.JLabel();
+        lblPlayerName2 = new javax.swing.JLabel();
+        lblPlayerName3 = new javax.swing.JLabel();
+        lblPlayerName4 = new javax.swing.JLabel();
         lblPlayerEnemyName = new javax.swing.JLabel();
         lblPlayerName = new javax.swing.JLabel();
         jPanelPropio = new javax.swing.JPanel();
@@ -73,6 +77,40 @@ public class PantallaCliente extends javax.swing.JFrame {
         getContentPane().add(btnSend);
         btnSend.setBounds(1220, 870, 73, 30);
 
+        lblPlayerName1.setBackground(new java.awt.Color(255, 255, 255));
+        lblPlayerName1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblPlayerName1.setForeground(new java.awt.Color(0, 0, 0));
+        lblPlayerName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayerName1.setOpaque(true);
+        getContentPane().add(lblPlayerName1);
+        lblPlayerName1.setBounds(40, 330, 130, 40);
+
+        lblPlayerName2.setBackground(new java.awt.Color(255, 255, 255));
+        lblPlayerName2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblPlayerName2.setForeground(new java.awt.Color(204, 204, 0));
+        lblPlayerName2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayerName2.setText("Acero:");
+        lblPlayerName2.setOpaque(true);
+        getContentPane().add(lblPlayerName2);
+        lblPlayerName2.setBounds(40, 290, 130, 40);
+
+        lblPlayerName3.setBackground(new java.awt.Color(255, 255, 255));
+        lblPlayerName3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblPlayerName3.setForeground(new java.awt.Color(0, 0, 0));
+        lblPlayerName3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayerName3.setOpaque(true);
+        getContentPane().add(lblPlayerName3);
+        lblPlayerName3.setBounds(40, 250, 130, 40);
+
+        lblPlayerName4.setBackground(new java.awt.Color(255, 255, 255));
+        lblPlayerName4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblPlayerName4.setForeground(new java.awt.Color(204, 204, 0));
+        lblPlayerName4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayerName4.setText("Dinero:");
+        lblPlayerName4.setOpaque(true);
+        getContentPane().add(lblPlayerName4);
+        lblPlayerName4.setBounds(40, 210, 130, 40);
+
         lblPlayerEnemyName.setBackground(new java.awt.Color(255, 255, 255));
         lblPlayerEnemyName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblPlayerEnemyName.setForeground(new java.awt.Color(204, 204, 0));
@@ -89,7 +127,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         lblPlayerName.setText("Player name");
         lblPlayerName.setOpaque(true);
         getContentPane().add(lblPlayerName);
-        lblPlayerName.setBounds(260, 50, 230, 40);
+        lblPlayerName.setBounds(350, 50, 230, 40);
 
         jPanelPropio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanelPropio.setOpaque(false);
@@ -106,7 +144,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanelPropio);
-        jPanelPropio.setBounds(140, 110, 500, 500);
+        jPanelPropio.setBounds(210, 110, 500, 500);
 
         jPanelEnemigos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanelEnemigos.setOpaque(false);
@@ -177,6 +215,10 @@ public class PantallaCliente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelPropio;
     private javax.swing.JLabel lblPlayerEnemyName;
     private javax.swing.JLabel lblPlayerName;
+    private javax.swing.JLabel lblPlayerName1;
+    private javax.swing.JLabel lblPlayerName2;
+    private javax.swing.JLabel lblPlayerName3;
+    private javax.swing.JLabel lblPlayerName4;
     private javax.swing.JLabel lblfondo;
     private java.awt.TextArea txtAreaConsola;
     private java.awt.TextField txtFieldConsola;

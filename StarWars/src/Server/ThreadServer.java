@@ -74,7 +74,20 @@ public class ThreadServer extends Thread {
                    break;
                    
                    case 2:
-
+                       usuario = reader.readUTF();
+                       String comando = reader.readUTF();
+                       String[] comandos = comando.split("-");
+                       
+                       
+                       if(comandos[0].equals("place")){  //comando para crear 1 de 3 heroes
+                           jugadorTmp = server.buscarPlayer(usuario);
+                           
+                           if(jugadorTmp.gameReady){
+                               writer.writeInt(2);
+                               writer.writeUTF("ERROR. You have already completed your army!");
+                               break;
+                           }
+                       }
                }               
             } catch (IOException ex){
                 

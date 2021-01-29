@@ -9,6 +9,12 @@ package Game;
  *
  * @author PERSONAL
  */
-public class Mundo {
+public class Mundo extends Componentes {
+    
+    
+    
+    public Mundo(String nombre, int vida) {
+        super(nombre, vida);
+    }
     
 }
