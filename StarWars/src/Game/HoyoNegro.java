@@ -26,7 +26,13 @@ public class HoyoNegro extends Componentes{
 
     
     
-    
+    public String retornarAtaque(Player atacante){
+        String res = "";
+        
+        
+        
+        return res;
+    }
     @Override//no se usa
     public String explotar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

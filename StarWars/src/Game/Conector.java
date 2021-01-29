@@ -18,9 +18,52 @@ public class Conector extends Componentes{
         this.conexiones = new ArrayList<Componentes>();
     }
 
-    @Override
-    public String explotar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String explotar(){
+        int x = -1;
+        int y = -1;
+        
+        
+        String res = "";
+        for(int i = 0; i < owner.tablero.length;i++){
+            for(int j  = 0; j< owner.tablero[i].length;j++){
+                
+                if(owner.tablero[i][j].componente.equals(this)){
+                    if(x == -1 && y == -1){
+                        x = j;
+                        y = i;
+                    }
+                    
+                    else{
+                        break;
+                    }
+                }
+            }
+            if(x != -1 && y != -1 ){
+                break;
+            }
+        }
+        double distanciaTmp;
+     
+        for(int i = 0; i < owner.tablero.length;i++){
+            for(int j  = 0; j< owner.tablero[i].length;j++){
+                distanciaTmp  = Math.sqrt(((x-j)*(x-j))+((y-i)*(y-i)));
+                
+                if(distanciaTmp <= 2 ){
+                    if(owner.tablero[i][j].explotado == 0 && owner.tablero[i][j].componente != null){
+                       owner.tablero[i][j].explotado = 1;
+                       owner.tablero[i][j].componente.vida -= 1;
+                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de una mina ubicada en ("+x+","+y+") \n";
+                       if(owner.tablero[i][j].componente.vida == 0){
+                           res += owner.tablero[i][j].componente.explotar();
+                       }
+                    }
+                }
+            }
+        }
+        
+        
+        return res;
+        
     }
 
    

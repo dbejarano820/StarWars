@@ -19,8 +19,56 @@ public class Mercado extends Componentes {
     }
 
     @Override
-    public String explotar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String explotar(){
+        int x1 = -1;
+        int y1 = -1;
+        int x2 = -1;
+        int y2 = -1;
+        
+        String res = "";
+        for(int i = 0; i < owner.tablero.length;i++){
+            for(int j  = 0; j< owner.tablero[i].length;j++){
+                
+                if(owner.tablero[i][j].componente.equals(this)){
+                    if(x1 == -1 && y1 == -1){
+                        x1 = j;
+                        y1 = i;
+                    }
+                    else if(x2 == -1 && y2 == -1){
+                        x2 = j;
+                        y2 = i;
+                    }
+                    else{
+                        break;
+                    }
+                }
+            }
+            if(x1 != -1 && y1 != -1 && x2 != -1 && y2 != -1){
+                break;
+            }
+        }
+        double distanciaTmp1;
+        double distanciaTmp2;
+        for(int i = 0; i < owner.tablero.length;i++){
+            for(int j  = 0; j< owner.tablero[i].length;j++){
+                distanciaTmp1  = Math.sqrt(((x1-j)*(x1-j))+((y1-i)*(y1-i)));
+                distanciaTmp2  = Math.sqrt(((x2-j)*(x2-j))+((y2-i)*(y2-i)));
+                if(distanciaTmp1 <= 2 || distanciaTmp2 <= 2){
+                    if(owner.tablero[i][j].explotado == 0 && owner.tablero[i][j].componente != null){
+                       owner.tablero[i][j].explotado = 1;
+                       owner.tablero[i][j].componente.vida -= 1;
+                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de una mina ubicada en ("+x1+","+y1+") y en ("+x2+","+y2+") \n";
+                       if(owner.tablero[i][j].componente.vida == 0){
+                           res += owner.tablero[i][j].componente.explotar();
+                       }
+                    }
+                }
+            }
+        }
+        
+        
+        return res;
+        
     }
 
     
