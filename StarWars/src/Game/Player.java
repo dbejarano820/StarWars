@@ -46,6 +46,69 @@ public class Player {
     public void setDinero(int dinero){
         this.Dinero = dinero;
     }
+    public String comprar(String tipo){
+        String res = "";
+        boolean encontrado = false;
+        for(int i = 0; i < tablero.length;i++){
+            for(int j = 0; j< tablero[i].length;j++){
+                
+                if(tablero[i][j].componente.getClass().getSimpleName().equals("Armeria")){
+                    Armeria armeria = (Armeria)tablero[i][j].componente;
+                    if(armeria.tipoArma.equals(tipo))
+                        encontrado = true;
+                }
+            }
+        }
+        if(encontrado){
+            if(tipo.equals("misil")){
+                if(Acero > 500){
+                    misiles++;
+                    res+= "El jugador "+nombre+" compró un misil";
+                }
+                else{
+                    res += "El jugador "+nombre+" no compró un misil porque no posee acero suficiente";
+                }
+                
+            }
+            else if(tipo.equals("multishot")){
+                if(Acero > 1000){
+                    multi++;
+                    res+= "El jugador "+nombre+" compró un Multi Shot";
+                }
+                else{
+                    res += "El jugador "+nombre+" no compró un Multi Shot porque no posee acero suficiente";
+                }
+                
+            }
+            else if(tipo.equals("bomba")){
+                if(Acero > 2000){
+                    bombas++;
+                    res+= "El jugador "+nombre+" compró una bomba";
+                }
+                else{
+                    res += "El jugador "+nombre+" no compró una bomba porque no posee acero suficiente";
+                }
+                
+            }
+            else if(tipo.equals("comboshot")){
+                if(Acero > 5000){
+                    combo++;
+                    res+= "El jugador "+nombre+" compró un ComboShot";
+                }
+                else{
+                    res += "El jugador "+nombre+" no compró un ComboShot porque no posee acero suficiente";
+                }
+                
+            }
+            
+        }
+        else{
+            res += "El jugador "+nombre+" no posee una armeria para poder crear "+tipo;
+        }
+        
+        
+        return res;
+    }
     
     
 }
