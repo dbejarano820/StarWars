@@ -23,8 +23,7 @@ public class Player {
     
     public Player(String nombre){
         this.nombre  = nombre;
-        gameReady = false;
-        Dinero = 4000;       
+        gameReady = false;       
         tablero = new Casilla[15][15];  //row, fila ... y, x   (en pantalla es x,y)
         generateTablero();
     }
@@ -38,8 +37,10 @@ public class Player {
             } 
     }
   
-
-  
+    
+    public void setDinero(int dinero){
+        this.Dinero = dinero;
+    }
     
     
 }

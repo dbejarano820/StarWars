@@ -21,6 +21,7 @@ public class Cliente {
     public ThreadPlayer hiloPlayer;  
     boolean gameready;
     public String nombre;
+    public Casilla[][] tableroCliente;
     
     public Cliente(PantallaCliente refPantalla){
         this.refPantalla = refPantalla;

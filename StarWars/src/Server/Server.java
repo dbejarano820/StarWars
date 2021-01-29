@@ -29,6 +29,22 @@ public class Server {
      private int turno = 0;
      private boolean gameStarted = false;
      public boolean allPlayersReady = false;
+     
+     public int Dinero;
+     public int velocidadMina;
+     public int cantidadMina;
+
+    public void setDinero(int Dinero) {
+        this.Dinero = Dinero;
+    }
+
+    public void setVelocidadMina(int velocidadMina) {
+        this.velocidadMina = velocidadMina;
+    }
+
+    public void setCantidadMina(int cantidadMina) {
+        this.cantidadMina = cantidadMina;
+    }
 
     public Server(PantallaServer refPantalla){
         

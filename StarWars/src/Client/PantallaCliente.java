@@ -52,8 +52,10 @@ public class PantallaCliente extends javax.swing.JFrame {
         btnSend = new javax.swing.JButton();
         lblPlayerName1 = new javax.swing.JLabel();
         lblPlayerName2 = new javax.swing.JLabel();
-        lblPlayerName3 = new javax.swing.JLabel();
+        lblPlayerTurno = new javax.swing.JLabel();
         lblPlayerName4 = new javax.swing.JLabel();
+        lblPlayerName6 = new javax.swing.JLabel();
+        lblPlayerName5 = new javax.swing.JLabel();
         lblPlayerEnemyName = new javax.swing.JLabel();
         lblPlayerName = new javax.swing.JLabel();
         jPanelPropio = new javax.swing.JPanel();
@@ -94,22 +96,39 @@ public class PantallaCliente extends javax.swing.JFrame {
         getContentPane().add(lblPlayerName2);
         lblPlayerName2.setBounds(40, 290, 130, 40);
 
-        lblPlayerName3.setBackground(new java.awt.Color(255, 255, 255));
-        lblPlayerName3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblPlayerName3.setForeground(new java.awt.Color(0, 0, 0));
-        lblPlayerName3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPlayerName3.setOpaque(true);
-        getContentPane().add(lblPlayerName3);
-        lblPlayerName3.setBounds(40, 250, 130, 40);
+        lblPlayerTurno.setBackground(new java.awt.Color(255, 255, 255));
+        lblPlayerTurno.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblPlayerTurno.setForeground(new java.awt.Color(0, 0, 0));
+        lblPlayerTurno.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayerTurno.setOpaque(true);
+        getContentPane().add(lblPlayerTurno);
+        lblPlayerTurno.setBounds(690, 50, 130, 40);
 
         lblPlayerName4.setBackground(new java.awt.Color(255, 255, 255));
         lblPlayerName4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblPlayerName4.setForeground(new java.awt.Color(204, 204, 0));
         lblPlayerName4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPlayerName4.setText("Dinero:");
+        lblPlayerName4.setText("Turno:");
         lblPlayerName4.setOpaque(true);
         getContentPane().add(lblPlayerName4);
-        lblPlayerName4.setBounds(40, 210, 130, 40);
+        lblPlayerName4.setBounds(690, 10, 130, 40);
+
+        lblPlayerName6.setBackground(new java.awt.Color(255, 255, 255));
+        lblPlayerName6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblPlayerName6.setForeground(new java.awt.Color(0, 0, 0));
+        lblPlayerName6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayerName6.setOpaque(true);
+        getContentPane().add(lblPlayerName6);
+        lblPlayerName6.setBounds(40, 250, 130, 40);
+
+        lblPlayerName5.setBackground(new java.awt.Color(255, 255, 255));
+        lblPlayerName5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblPlayerName5.setForeground(new java.awt.Color(204, 204, 0));
+        lblPlayerName5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayerName5.setText("Dinero:");
+        lblPlayerName5.setOpaque(true);
+        getContentPane().add(lblPlayerName5);
+        lblPlayerName5.setBounds(40, 210, 130, 40);
 
         lblPlayerEnemyName.setBackground(new java.awt.Color(255, 255, 255));
         lblPlayerEnemyName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -217,8 +236,10 @@ public class PantallaCliente extends javax.swing.JFrame {
     private javax.swing.JLabel lblPlayerName;
     private javax.swing.JLabel lblPlayerName1;
     private javax.swing.JLabel lblPlayerName2;
-    private javax.swing.JLabel lblPlayerName3;
     private javax.swing.JLabel lblPlayerName4;
+    private javax.swing.JLabel lblPlayerName5;
+    private javax.swing.JLabel lblPlayerName6;
+    private javax.swing.JLabel lblPlayerTurno;
     private javax.swing.JLabel lblfondo;
     private java.awt.TextArea txtAreaConsola;
     private java.awt.TextField txtFieldConsola;
