@@ -44,7 +44,9 @@ public class PantallaCliente extends javax.swing.JFrame {
     }
     
     public void generarTableroPropio(){
-
+        
+        lblPlayerName.setText(refCliente.nombre);
+        
         for(int row = 0; row < refCliente.tableroCliente.length; row++){  //refCliente.tableroCliente.length
             for(int col = 0; col < refCliente.tableroCliente[row].length; col++){ //refCliente.tableroCliente[row].length
                 refCliente.tableroCliente[row][col] = new Casilla();  
