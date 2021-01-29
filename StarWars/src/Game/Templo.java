@@ -114,11 +114,11 @@ public class Templo extends Componentes{
                         }
                     }
                 }
-            } catch (InterruptedException ex) {
+            } 
+            catch (InterruptedException ex) {
                 Logger.getLogger(Templo.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        
+        } 
     }
 
     @Override

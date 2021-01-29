@@ -16,9 +16,13 @@ public class Player {
    
 
     public String nombre;
-    public boolean gameReady;;
+    public boolean gameReady;
     public int Dinero;
     public int Acero;
+    public int misiles;
+    public int multi;
+    public int bombas;
+    public int combo;
     public Casilla[][] tablero;
     
     
