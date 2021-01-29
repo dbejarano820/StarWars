@@ -141,9 +141,9 @@ public class PantallaCliente extends javax.swing.JFrame {
 
         btnNextPlayer.setText("Next");
         getContentPane().add(btnNextPlayer);
-        btnNextPlayer.setBounds(1170, 50, 90, 40);
+        btnNextPlayer.setBounds(1150, 50, 90, 40);
         getContentPane().add(txtAreaConsola);
-        txtAreaConsola.setBounds(140, 640, 1150, 230);
+        txtAreaConsola.setBounds(140, 580, 1150, 290);
         getContentPane().add(txtFieldConsola);
         txtFieldConsola.setBounds(140, 870, 1080, 30);
 
@@ -174,7 +174,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         lblPlayerTurno.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPlayerTurno.setOpaque(true);
         getContentPane().add(lblPlayerTurno);
-        lblPlayerTurno.setBounds(690, 50, 130, 40);
+        lblPlayerTurno.setBounds(660, 50, 130, 40);
 
         lblPlayerName4.setBackground(new java.awt.Color(255, 255, 255));
         lblPlayerName4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -183,7 +183,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         lblPlayerName4.setText("Turno:");
         lblPlayerName4.setOpaque(true);
         getContentPane().add(lblPlayerName4);
-        lblPlayerName4.setBounds(690, 10, 130, 40);
+        lblPlayerName4.setBounds(660, 10, 130, 40);
 
         lblPlayerName6.setBackground(new java.awt.Color(255, 255, 255));
         lblPlayerName6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -209,7 +209,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         lblPlayerEnemyName.setText("Enemy name");
         lblPlayerEnemyName.setOpaque(true);
         getContentPane().add(lblPlayerEnemyName);
-        lblPlayerEnemyName.setBounds(920, 50, 230, 40);
+        lblPlayerEnemyName.setBounds(900, 50, 230, 40);
 
         lblPlayerName.setBackground(new java.awt.Color(255, 255, 255));
         lblPlayerName.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -218,7 +218,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         lblPlayerName.setText("Player name");
         lblPlayerName.setOpaque(true);
         getContentPane().add(lblPlayerName);
-        lblPlayerName.setBounds(350, 50, 230, 40);
+        lblPlayerName.setBounds(330, 50, 230, 40);
 
         jPanelPropio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanelPropio.setOpaque(false);
@@ -227,15 +227,15 @@ public class PantallaCliente extends javax.swing.JFrame {
         jPanelPropio.setLayout(jPanelPropioLayout);
         jPanelPropioLayout.setHorizontalGroup(
             jPanelPropioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 448, Short.MAX_VALUE)
         );
         jPanelPropioLayout.setVerticalGroup(
             jPanelPropioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 448, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanelPropio);
-        jPanelPropio.setBounds(210, 110, 500, 500);
+        jPanelPropio.setBounds(210, 110, 450, 450);
 
         jPanelEnemigos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jPanelEnemigos.setOpaque(false);
@@ -244,15 +244,15 @@ public class PantallaCliente extends javax.swing.JFrame {
         jPanelEnemigos.setLayout(jPanelEnemigosLayout);
         jPanelEnemigosLayout.setHorizontalGroup(
             jPanelEnemigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 448, Short.MAX_VALUE)
         );
         jPanelEnemigosLayout.setVerticalGroup(
             jPanelEnemigosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGap(0, 448, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanelEnemigos);
-        jPanelEnemigos.setBounds(790, 110, 500, 500);
+        jPanelEnemigos.setBounds(790, 110, 450, 450);
 
         lblfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ClientFondo.jpg"))); // NOI18N
         lblfondo.setMaximumSize(new java.awt.Dimension(1345, 817));

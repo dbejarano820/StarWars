@@ -17,6 +17,8 @@ public class MainCliente {
         PantallaCliente pantalla = new PantallaCliente();
         Cliente p = new Cliente(pantalla); 
         p.conectar();
+        pantalla.generarTableroPropio();
+        pantalla.generarTableroEnemigo();
         pantalla.setVisible(true);     
         }
         catch(Exception e){
