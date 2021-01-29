@@ -18,27 +18,32 @@ public class HoyoNegro extends Componentes{
         this.conexiones = new ArrayList<Componentes>();
     }
 
-    @Override
-    public String explotar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 
-    @Override
-    public int conectado() {
+    
+
+    
+    
+    
+    @Override//no se usa
+    public String explotar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override//no se usa
+    public void conectar(Componentes componente) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void conectar(Componentes componente) {
-        this.conexiones.add(componente);
-        componente.conexiones.add(this);
-    }
-
-    @Override
+    @Override//no se usa
     public String morir(Player atacante) {
-        return "";
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    @Override//no se usa
+    public int conectado() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

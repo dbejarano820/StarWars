@@ -15,12 +15,14 @@ public class Mina extends Componentes {
 
     public int velocidad;
     public int cantidad;
+    private boolean running;
 
     public Mina(int velocidad, int cantidad, String nombre, int vida, Player owner) {
         super(nombre, vida, owner);
         this.velocidad = velocidad;
         this.cantidad = cantidad;
         this.conexiones = new ArrayList<Componentes>();
+        this.running = true;
     }
 
     
@@ -36,7 +38,7 @@ public class Mina extends Componentes {
     public int conectado() {
         int res = 0;
         
-        if(this.vida < 0){
+        if(this.vida == 0){
             return 0;
         }
         
@@ -56,13 +58,18 @@ public class Mina extends Componentes {
     }
 
     @Override
-    public void conectar(Componentes componente) {
-        this.conexiones.add(componente);
-        componente.conexiones.add(this);
+    public void conectar(Componentes componente){
+        if(componente.getClass().getSimpleName().equals("Conector")){
+            this.conexiones.add(componente);
+            componente.conexiones.add(this);
+        }
+        
     }
 
     @Override
     public String morir(Player atacante) {
+        this.running = false;
+        
         return "El jugador "+atacante.nombre + " destruyo una mina de "+ this.owner.nombre;
     }
     
