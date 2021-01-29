@@ -27,19 +27,22 @@ public class Mundo extends Componentes {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    
     @Override
     public String morir(Player atacante) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        atacante.Dinero += 10000;
+        return "El jugador "+atacante.nombre+" destruyo el mundo de "+this.owner.nombre+ " y gano 10000";
     }
 
     @Override
-    public boolean conectado() {
+    public int conectado() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void conectar(Componentes componente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.conexiones.add(componente);
+        componente.conexiones.add(this);
     }
     
 }

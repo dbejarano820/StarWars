@@ -25,19 +25,22 @@ public class Armeria extends Componentes{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public String morir(Player atacante) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
-    public boolean conectado() {
+    public int conectado() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void conectar(Componentes componente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.conexiones.add(componente);
+        componente.conexiones.add(this);
+    }
+
+    @Override
+    public String morir(Player atacante) {
+        return "El jugador "+atacante.nombre + " destruyo una armeria de "+tipoArma+" de "+ this.owner.nombre;
     }
     
 }

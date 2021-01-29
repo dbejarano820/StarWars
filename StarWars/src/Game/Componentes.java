@@ -30,7 +30,7 @@ public abstract class Componentes extends Thread{
     }
     public abstract String explotar();
     public abstract String morir(Player atacante);
-    public abstract boolean conectado();
+    public abstract int conectado();
     public abstract void conectar(Componentes componente);
     
 

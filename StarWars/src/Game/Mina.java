@@ -30,18 +30,44 @@ public class Mina extends Componentes {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public String morir(Player atacante) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
-    public boolean conectado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int conectado() {
+        int res = 0;
+        
+        if(this.vida < 0){
+            return 0;
+        }
+        
+        for(int i = 0; i < conexiones.size(); i++){
+            if(conexiones.get(i).getClass().getSimpleName().equals("Mundo") && conexiones.get(i).vida > 0){
+                return 1;
+            }
+        }
+        
+        for(int i = 0; i < conexiones.size(); i++){
+            res = res + conexiones.get(i).conectado();
+        }
+        if(res > 0)
+            res = 1;
+        
+        return res;
     }
 
     @Override
     public void conectar(Componentes componente) {
+        this.conexiones.add(componente);
+        componente.conexiones.add(this);
+    }
+
+    @Override
+    public String morir(Player atacante) {
+        return "El jugador "+atacante.nombre + " destruyo una mina de "+ this.owner.nombre;
+    }
+    
+    @Override
+    public void run(){
         
     }
     
