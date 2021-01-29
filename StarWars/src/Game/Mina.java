@@ -9,17 +9,20 @@ import java.util.ArrayList;
 
 /**
  *
- * @author PERSONAL
+ * @author XT
  */
-public class Mundo extends Componentes {
+public class Mina extends Componentes {
 
-    public Mundo(String nombre, int vida, Player owner) {
+    public int velocidad;
+    public int cantidad;
+
+    public Mina(int velocidad, int cantidad, String nombre, int vida, Player owner) {
         super(nombre, vida, owner);
+        this.velocidad = velocidad;
+        this.cantidad = cantidad;
         this.conexiones = new ArrayList<Componentes>();
     }
-    
-    
-    
+
     
 
     @Override
@@ -39,7 +42,7 @@ public class Mundo extends Componentes {
 
     @Override
     public void conectar(Componentes componente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

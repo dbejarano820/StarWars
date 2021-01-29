@@ -9,18 +9,16 @@ import java.util.ArrayList;
 
 /**
  *
- * @author PERSONAL
+ * @author XT
  */
-public class Mundo extends Componentes {
+public class Armeria extends Componentes{
+    String tipoArma;
 
-    public Mundo(String nombre, int vida, Player owner) {
+    public Armeria(String nombre, int vida, Player owner, String tipoArma) {
         super(nombre, vida, owner);
+        this.tipoArma = tipoArma;
         this.conexiones = new ArrayList<Componentes>();
     }
-    
-    
-    
-    
 
     @Override
     public String explotar() {
