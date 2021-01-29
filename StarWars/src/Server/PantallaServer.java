@@ -189,7 +189,14 @@ public class PantallaServer extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void btnConfirmSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmSettingsActionPerformed
-        // TODO add your handling code here:
+
+        int dinero = Integer.parseInt(txtFieldDinero.getText());
+        int velocidad = Integer.parseInt(txtFieldVelocidadMina.getText());
+        int cantidad = Integer.parseInt(txtFieldCantidadMina.getText());
+        
+        srv.setDinero(dinero);
+        srv.setVelocidadMina(velocidad);
+        srv.setCantidadMina(cantidad); 
     }//GEN-LAST:event_btnConfirmSettingsActionPerformed
 
     /**
