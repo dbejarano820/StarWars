@@ -20,15 +20,16 @@ public class Misil {
                 
                 victima.tablero[y][x].componente.vida -= 1;
                 victima.tablero[y][x].explotado = 1;
-                res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima del misil enviado por "+atacante.nombre;
+                res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima del misil enviado por "+atacante.nombre+"\n";
             }
             else{
-                res += "La casilla ("+x+","+y+") de "+victima.nombre+" no le afecto el misil enviado por "+atacante.nombre+" porque ya estaba muerta";
+                res += "La casilla ("+x+","+y+") de "+victima.nombre+" no le afecto el misil enviado por "+atacante.nombre+" porque ya estaba muerta\n";
             }
         }
         else{
-            res += "La casilla ("+x+","+y+") de "+victima.nombre+" no le afecto el misil enviado por "+atacante.nombre+" porque en esa zona no hay nada";
+            res += "La casilla ("+x+","+y+") de "+victima.nombre+" no le afecto el misil enviado por "+atacante.nombre+" porque en esa zona no hay nada\n";
         }
+        
         return res;
     }
     
