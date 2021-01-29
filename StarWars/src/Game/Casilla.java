@@ -17,6 +17,7 @@ public class Casilla {
     public JLabel refLabel;
     int explotado;
     int visible;
+    int ID;
     
     public Casilla(){
         componente = null;
