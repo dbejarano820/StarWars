@@ -15,33 +15,114 @@ public class Mina extends Componentes {
 
     public int velocidad;
     public int cantidad;
+    private boolean running;
 
     public Mina(int velocidad, int cantidad, String nombre, int vida, Player owner) {
         super(nombre, vida, owner);
         this.velocidad = velocidad;
         this.cantidad = cantidad;
         this.conexiones = new ArrayList<Componentes>();
+        this.running = true;
     }
 
     
 
     @Override
-    public String explotar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String explotar(){
+        int x1 = -1;
+        int y1 = -1;
+        int x2 = -1;
+        int y2 = -1;
+        
+        String res = "";
+        for(int i = 0; i < owner.tablero.length;i++){
+            for(int j  = 0; j< owner.tablero[i].length;j++){
+                
+                if(owner.tablero[i][j].componente.equals(this)){
+                    if(x1 == -1 && y1 == -1){
+                        x1 = j;
+                        y1 = i;
+                    }
+                    else if(x2 == -1 && y2 == -1){
+                        x2 = j;
+                        y2 = i;
+                    }
+                    else{
+                        break;
+                    }
+                }
+            }
+            if(x1 != -1 && y1 != -1 && x2 != -1 && y2 != -1){
+                break;
+            }
+        }
+        double distanciaTmp1;
+        double distanciaTmp2;
+        for(int i = 0; i < owner.tablero.length;i++){
+            for(int j  = 0; j< owner.tablero[i].length;j++){
+                distanciaTmp1  = Math.sqrt(((x1-j)*(x1-j))+((y1-i)*(y1-i)));
+                distanciaTmp2  = Math.sqrt(((x2-j)*(x2-j))+((y2-i)*(y2-i)));
+                if(distanciaTmp1 <= 2 || distanciaTmp2 <= 2){
+                    if(owner.tablero[i][j].explotado == 0 && owner.tablero[i][j].componente != null){
+                       owner.tablero[i][j].explotado = 1;
+                       owner.tablero[i][j].componente.vida -= 1;
+                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de una mina ubicada en ("+x1+","+y1+") y en ("+x2+","+y2+") \n";
+                       if(owner.tablero[i][j].componente.vida == 0){
+                           res += owner.tablero[i][j].componente.explotar();
+                       }
+                    }
+                }
+            }
+        }
+        
+        
+        return res;
+        
+    }
+
+    
+
+    @Override
+    public int conectado() {
+        int res = 0;
+        
+        if(this.vida == 0){
+            return 0;
+        }
+        
+        for(int i = 0; i < conexiones.size(); i++){
+            if(conexiones.get(i).getClass().getSimpleName().equals("Mundo") && conexiones.get(i).vida > 0){
+                return 1;
+            }
+        }
+        
+        for(int i = 0; i < conexiones.size(); i++){
+            res = res + conexiones.get(i).conectado();
+        }
+        if(res > 0)
+            res = 1;
+        
+        return res;
+    }
+
+    @Override
+    public void conectar(Componentes componente){
+        if(componente.getClass().getSimpleName().equals("Conector")){
+            this.conexiones.add(componente);
+            componente.conexiones.add(this);
+        }
+        
     }
 
     @Override
     public String morir(Player atacante) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.running = false;
+        
+        return "El jugador "+atacante.nombre + " destruyo una mina de "+ this.owner.nombre;
     }
-
+    
     @Override
-    public boolean conectado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void conectar(Componentes componente) {
+    public void run(){
         
     }
     

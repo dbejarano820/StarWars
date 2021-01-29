@@ -18,24 +18,92 @@ public class Conector extends Componentes{
         this.conexiones = new ArrayList<Componentes>();
     }
 
+    public String explotar(){
+        int x = -1;
+        int y = -1;
+        
+        
+        String res = "";
+        for(int i = 0; i < owner.tablero.length;i++){
+            for(int j  = 0; j< owner.tablero[i].length;j++){
+                
+                if(owner.tablero[i][j].componente.equals(this)){
+                    if(x == -1 && y == -1){
+                        x = j;
+                        y = i;
+                    }
+                    
+                    else{
+                        break;
+                    }
+                }
+            }
+            if(x != -1 && y != -1 ){
+                break;
+            }
+        }
+        double distanciaTmp;
+     
+        for(int i = 0; i < owner.tablero.length;i++){
+            for(int j  = 0; j< owner.tablero[i].length;j++){
+                distanciaTmp  = Math.sqrt(((x-j)*(x-j))+((y-i)*(y-i)));
+                
+                if(distanciaTmp <= 2 ){
+                    if(owner.tablero[i][j].explotado == 0 && owner.tablero[i][j].componente != null){
+                       owner.tablero[i][j].explotado = 1;
+                       owner.tablero[i][j].componente.vida -= 1;
+                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de una mina ubicada en ("+x+","+y+") \n";
+                       if(owner.tablero[i][j].componente.vida == 0){
+                           res += owner.tablero[i][j].componente.explotar();
+                       }
+                    }
+                }
+            }
+        }
+        
+        
+        return res;
+        
+    }
+
+   
+
     @Override
-    public String explotar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int conectado() {
+        int res = 0;
+        
+        if(this.vida == 0){
+            return 0;
+        }
+        
+        for(int i = 0; i < conexiones.size(); i++){
+            if(conexiones.get(i).getClass().getSimpleName().equals("Mundo") && conexiones.get(i).vida > 0){
+                return 1;
+            }
+        }
+        
+        for(int i = 0; i < conexiones.size(); i++){
+            res = res + conexiones.get(i).conectado();
+        }
+        if(res > 0)
+            res = 1;
+        
+        return res;
+    }
+
+    @Override
+    public void conectar(Componentes componente){
+        if(!componente.getClass().getSimpleName().equals("Conector")){
+            this.conexiones.add(componente);
+            componente.conexiones.add(this);
+        }
+        
     }
 
     @Override
     public String morir(Player atacante) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        return "El jugador "+atacante.nombre + " destruyo un conector de "+ this.owner.nombre;
 
-    @Override
-    public boolean conectado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void conectar(Componentes componente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
