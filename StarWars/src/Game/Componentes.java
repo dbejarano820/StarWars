@@ -11,7 +11,7 @@ import javax.swing.JLabel;
  *
  * @author PERSONAL
  */
-public abstract class Componentes {
+public abstract class Componentes extends Thread{
     
     public String nombre;
     public int vida;

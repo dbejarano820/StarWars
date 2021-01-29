@@ -44,8 +44,17 @@ public class PantallaServer extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         lblConectados = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        textField1 = new java.awt.TextField();
+        textField2 = new java.awt.TextField();
+        textField3 = new java.awt.TextField();
+        jLabel7 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        btnConfirmSettings = new javax.swing.JButton();
         btnConfirm = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -70,18 +79,71 @@ public class PantallaServer extends javax.swing.JFrame {
         lblConectados.setBounds(840, 360, 160, 110);
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 0));
-        jLabel5.setText("Players Connected:");
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Dinero:");
         jLabel5.setOpaque(true);
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(840, 290, 160, 70);
+        jLabel5.setBounds(30, 380, 160, 70);
+
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Velocidad mina:");
+        jLabel8.setOpaque(true);
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(30, 450, 190, 70);
+
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Cantidad mina:");
+        jLabel9.setOpaque(true);
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(30, 520, 180, 70);
+
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("SETTINGS:");
+        jLabel10.setOpaque(true);
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(90, 290, 210, 70);
+        getContentPane().add(textField1);
+        textField1.setBounds(220, 460, 120, 40);
+        getContentPane().add(textField2);
+        textField2.setBounds(220, 540, 120, 40);
+        getContentPane().add(textField3);
+        textField3.setBounds(200, 390, 120, 40);
+
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel7.setText("Players Connected:");
+        jLabel7.setOpaque(true);
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(840, 290, 160, 70);
 
         jComboBox1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(204, 204, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "4", " " }));
         getContentPane().add(jComboBox1);
         jComboBox1.setBounds(850, 490, 50, 40);
+
+        btnConfirmSettings.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnConfirmSettings.setForeground(new java.awt.Color(204, 204, 0));
+        btnConfirmSettings.setText("Set");
+        btnConfirmSettings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmSettingsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnConfirmSettings);
+        btnConfirmSettings.setBounds(270, 620, 80, 40);
 
         btnConfirm.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnConfirm.setForeground(new java.awt.Color(204, 204, 0));
@@ -93,6 +155,13 @@ public class PantallaServer extends javax.swing.JFrame {
         });
         getContentPane().add(btnConfirm);
         btnConfirm.setBounds(910, 490, 80, 40);
+
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 0));
+        jLabel6.setOpaque(true);
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(30, 290, 330, 380);
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -118,6 +187,10 @@ public class PantallaServer extends javax.swing.JFrame {
         btnConfirm.setForeground(Color.green);
     
     }//GEN-LAST:event_btnConfirmActionPerformed
+
+    private void btnConfirmSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmSettingsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConfirmSettingsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,12 +230,21 @@ public class PantallaServer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfirm;
+    private javax.swing.JButton btnConfirmSettings;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lblConectados;
+    private java.awt.TextField textField1;
+    private java.awt.TextField textField2;
+    private java.awt.TextField textField3;
     private java.awt.TextArea txtStatus;
     // End of variables declaration//GEN-END:variables
 }
