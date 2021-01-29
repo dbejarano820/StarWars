@@ -18,6 +18,10 @@ public class Casilla {
     int explotado;
     int visible;
     int ID;
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
     
     public Casilla(){
         componente = null;
