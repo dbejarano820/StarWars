@@ -6,6 +6,9 @@
 package Game;
 
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -100,6 +103,21 @@ public class Templo extends Componentes{
     
     @Override
     public void run(){
+        while(running){
+            try {
+                sleep(300000);
+                for(int i = 0;i < owner.tablero.length;i++){
+                    for(int j = 0; j < owner.tablero[i].length;j++){
+                        if(owner.tablero[i][j].componente != null && owner.tablero[i][j].explotado == 0){
+                            int cantEscudo = new Random().nextInt(7)+6;
+                            owner.tablero[i][j].componente.escudo += cantEscudo;
+                        }
+                    }
+                }
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Templo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
     }
 

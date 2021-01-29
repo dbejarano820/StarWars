@@ -6,6 +6,8 @@
 package Game;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -123,6 +125,17 @@ public class Mina extends Componentes {
     
     @Override
     public void run(){
+        
+        while(running){
+            try {
+                sleep(velocidad);
+                owner.Acero += cantidad;
+                
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Mina.class.getName()).log(Level.SEVERE, null, ex);
+                break;
+            }
+        }
         
     }
     

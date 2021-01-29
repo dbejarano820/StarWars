@@ -18,6 +18,7 @@ public class Player {
     public String nombre;
     public boolean gameReady;;
     public int Dinero;
+    public int Acero;
     public Casilla[][] tablero;
     
     
