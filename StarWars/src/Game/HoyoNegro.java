@@ -9,18 +9,14 @@ import java.util.ArrayList;
 
 /**
  *
- * @author PERSONAL
+ * @author XT
  */
-public class Mundo extends Componentes {
+public class HoyoNegro extends Componentes{
 
-    public Mundo(String nombre, int vida, Player owner) {
+    public HoyoNegro(String nombre, int vida, Player owner) {
         super(nombre, vida, owner);
         this.conexiones = new ArrayList<Componentes>();
     }
-    
-    
-    
-    
 
     @Override
     public String explotar() {

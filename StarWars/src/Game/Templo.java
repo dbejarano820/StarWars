@@ -9,18 +9,14 @@ import java.util.ArrayList;
 
 /**
  *
- * @author PERSONAL
+ * @author XT
  */
-public class Mundo extends Componentes {
+public class Templo extends Componentes{
 
-    public Mundo(String nombre, int vida, Player owner) {
+    public Templo(String nombre, int vida, Player owner) {
         super(nombre, vida, owner);
         this.conexiones = new ArrayList<Componentes>();
     }
-    
-    
-    
-    
 
     @Override
     public String explotar() {
@@ -35,6 +31,11 @@ public class Mundo extends Componentes {
     @Override
     public boolean conectado() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public void run(){
+        
     }
 
     @Override
