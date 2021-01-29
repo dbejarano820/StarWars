@@ -18,18 +18,25 @@ public class Player {
     public String nombre;
     public boolean gameReady;;
     public int Dinero;
-    
+    public Casilla[][] tablero;
     
     
     public Player(String nombre){
         this.nombre  = nombre;
         gameReady = false;
         Dinero = 4000;       
-
+        tablero = new Casilla[15][15];  //row, fila ... y, x   (en pantalla es x,y)
+        generateTablero();
     }
-  
 
 
+    public void generateTablero(){
+        
+        for(int row = 0; row < tablero.length; row++)
+            for(int col = 0; col < tablero[row].length; col++){
+                tablero[row][col] = new Casilla();         
+            } 
+    }
   
 
   
