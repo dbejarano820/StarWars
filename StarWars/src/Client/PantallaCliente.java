@@ -5,6 +5,16 @@
  */
 package Client;
 
+
+import Game.Casilla;
+import java.awt.Color;
+import java.awt.Image;
+import java.io.IOException;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
 /**
  *
  * @author PERSONAL
@@ -30,12 +40,74 @@ public class PantallaCliente extends javax.swing.JFrame {
     
     public void pintarTurno(String player){
         this.nombreTurno = player;
-      //lblTurnoPlayer.setText(player);
+        lblPlayerTurno.setText(player);
+    }
+    
+    public void generarTableroPropio(){
+
+        for(int row = 0; row < refCliente.tableroCliente.length; row++){  //refCliente.tableroCliente.length
+            for(int col = 0; col < refCliente.tableroCliente[row].length; col++){ //refCliente.tableroCliente[row].length
+                refCliente.tableroCliente[row][col] = new Casilla();  
+                JLabel labelTmp = refCliente.tableroCliente[row][col].generateLabel();
+                this.jPanelPropio.add(labelTmp);
+                labelTmp.setLocation(((col*30)), ((row*30))); 
+            }
+        }
+    }    
+    
+    public void generarTableroEnemigo(){
+
+        for(int row = 0; row < refCliente.tableroCliente.length; row++){  //refCliente.tableroCliente.length
+            for(int col = 0; col < refCliente.tableroCliente[row].length; col++){ //refCliente.tableroCliente[row].length
+                refCliente.tableroCliente[row][col] = new Casilla();  
+                JLabel labelTmp = refCliente.tableroCliente[row][col].generateLabel();
+                this.jPanelEnemigos.add(labelTmp);
+                labelTmp.setLocation(((col*30)), ((row*30))); 
+            }
+        }
+    }     
+    
+    
+  /*  
+     public void colorMatriz(){
+        
+        for(int row = 0; row < refCliente.tableroCliente.length; row++)
+            for(int col = 0; col < refCliente.tableroCliente[row].length; col++){
+                
+                if(refCliente.tableroCliente[row][col].heroOwner.equals(lblHero1Name.getText()))
+                    refCliente.tableroCliente[row][col].refLabel.setBackground(Color.cyan); 
+                else if(refCliente.tableroCliente[row][col].heroOwner.equals(lblHero2Name.getText()))
+                    refCliente.tableroCliente[row][col].refLabel.setBackground(Color.orange);
+                else if(refCliente.tableroCliente[row][col].heroOwner.equals(lblHero3Name.getText()))
+                    refCliente.tableroCliente[row][col].refLabel.setBackground(Color.gray);      
+            }  
+    }
+    
+    
+    public void mostrarVivas(){
+        
+        for(int row = 0; row < refCliente.tableroCliente.length; row++)
+            for(int col = 0; col < refCliente.tableroCliente[row].length; col++)
+                if(refCliente.tableroCliente[row][col].vida == 0 && !refCliente.tableroCliente[row][col].activeVolcano && !refCliente.tableroCliente[row][col].activeWhirlpool)
+                    refCliente.tableroCliente[row][col].refLabel.setText("X");
     }
     
     
     
-    
+    public void mostrarVolcanesRemolinos(String pathVolcan, String pathWhirlpool){
+        
+        for(int row = 0; row < refCliente.tableroCliente.length; row++)
+            for(int col = 0; col < refCliente.tableroCliente[row].length; col++){
+                
+                 if(refCliente.tableroCliente[row][col].activeVolcano){
+                     refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathVolcan).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+                 }
+                 else if(refCliente.tableroCliente[row][col].activeWhirlpool){
+                     refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathWhirlpool).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+                 }
+            }
+    }   
+ */
     
     /**
      * This method is called from within the constructor to initialize the form.

@@ -16,10 +16,12 @@ public class Casilla {
     Componentes componente;
     public JLabel refLabel;
     int explotado;
+    int visible;
     
     public Casilla(){
         componente = null;
         explotado = 0;
+        visible = 0;
     }
     
     public JLabel generateLabel(){      // se utiliza para generar el reflabel de las casillas del cliente, el player no lo necesita

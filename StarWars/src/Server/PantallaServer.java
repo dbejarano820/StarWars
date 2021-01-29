@@ -47,9 +47,9 @@ public class PantallaServer extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        textField1 = new java.awt.TextField();
-        textField2 = new java.awt.TextField();
-        textField3 = new java.awt.TextField();
+        txtFieldVelocidadMina = new java.awt.TextField();
+        txtFieldCantidadMina = new java.awt.TextField();
+        txtFieldDinero = new java.awt.TextField();
         jLabel7 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         btnConfirmSettings = new javax.swing.JButton();
@@ -113,12 +113,12 @@ public class PantallaServer extends javax.swing.JFrame {
         jLabel10.setOpaque(true);
         getContentPane().add(jLabel10);
         jLabel10.setBounds(90, 290, 210, 70);
-        getContentPane().add(textField1);
-        textField1.setBounds(220, 460, 120, 40);
-        getContentPane().add(textField2);
-        textField2.setBounds(220, 540, 120, 40);
-        getContentPane().add(textField3);
-        textField3.setBounds(200, 390, 120, 40);
+        getContentPane().add(txtFieldVelocidadMina);
+        txtFieldVelocidadMina.setBounds(220, 460, 120, 40);
+        getContentPane().add(txtFieldCantidadMina);
+        txtFieldCantidadMina.setBounds(220, 540, 120, 40);
+        getContentPane().add(txtFieldDinero);
+        txtFieldDinero.setBounds(200, 390, 120, 40);
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -242,9 +242,9 @@ public class PantallaServer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lblConectados;
-    private java.awt.TextField textField1;
-    private java.awt.TextField textField2;
-    private java.awt.TextField textField3;
+    private java.awt.TextField txtFieldCantidadMina;
+    private java.awt.TextField txtFieldDinero;
+    private java.awt.TextField txtFieldVelocidadMina;
     private java.awt.TextArea txtStatus;
     // End of variables declaration//GEN-END:variables
 }

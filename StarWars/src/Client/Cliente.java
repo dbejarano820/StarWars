@@ -22,9 +22,12 @@ public class Cliente {
     boolean gameready;
     public String nombre;
     public Casilla[][] tableroCliente;
+    public Casilla[][] tableroEnemigo;
     
     public Cliente(PantallaCliente refPantalla){
         this.refPantalla = refPantalla;
+        tableroCliente = new Casilla[15][15];
+        tableroEnemigo = new Casilla[15][15];
     }
     
     
