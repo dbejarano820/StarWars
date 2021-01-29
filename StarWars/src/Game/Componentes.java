@@ -9,6 +9,15 @@ package Game;
  *
  * @author PERSONAL
  */
-public class casillaMama {
+public abstract class Componentes {
+    
+    public String nombre;
+    public int vida;
+    
+    
+    public Componentes(String nombre, int vida){
+        this.nombre = nombre;
+        this.vida = vida;
+    }
     
 }
