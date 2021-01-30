@@ -264,4 +264,25 @@ public class Player {
         }
         return false;
     }
+    
+    public void setVisibilidad(){
+        for(int i = 0; i < tablero.length;i++){
+            for(int j = 0; j < tablero[i].length;j++){
+                if(tablero[i][j].componente != null){
+                    tablero[i][j].visible = tablero[i][j].componente.conectado();
+                }
+            }
+        }
+    }
+    
+    public void generateBlackHole(){
+        int x1 = new Random().nextInt(15);
+        int y1 = new Random().nextInt(15);
+        int x2 = new Random().nextInt(15);
+        int y2 = new Random().nextInt(15);
+        tablero[y1][x1].componente = new HoyoNegro("Hoyo Negro",10,this);
+        tablero[y2][x2].componente = new HoyoNegro("Hoyo Negro",10,this);
+        tablero[y1][x1].ID = 7;
+        tablero[y2][x2].ID = 7;
+    }
 }

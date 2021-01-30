@@ -17,6 +17,7 @@ public class HoyoNegro extends Componentes{
     public HoyoNegro(String nombre, int vida, Player owner) {
         super(nombre, vida, owner);
         this.conexiones = new ArrayList<Componentes>();
+        this.revisado = false;
     }
 
 
@@ -52,7 +53,7 @@ public class HoyoNegro extends Componentes{
     }
     @Override//no se usa
     public int conectado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 0;
     }
     
 }
