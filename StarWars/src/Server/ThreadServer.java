@@ -307,6 +307,7 @@ public class ThreadServer extends Thread {
                                    for(int i = 0; i < server.conexiones.size(); i++){
                                        if(server.conexiones.get(i).nombre.equals(jugadorTmp2.nombre)){
                                            ThreadServer current = server.conexiones.get(i);
+                                           current.writer.writeInt(7);
                                            current.writer.writeUTF(jugadorTmp.nombre + " le ofrece " + server.tradeItemQuantity + server.tradeItem + " a cambio de $" + server.tradePrice);
                                            break;
                                        }
