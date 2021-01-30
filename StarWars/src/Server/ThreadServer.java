@@ -101,14 +101,15 @@ public class ThreadServer extends Thread {
    }
    
    
- public void updateMatrizClienteEnemigo(String msj) throws IOException {
+ public void updateMatrizClienteEnemigo(String playerEnemigo, String playerSolicitante) throws IOException {
        
-     Player playerTmp = server.buscarPlayer(msj);
+     Player playerTmp = server.buscarPlayer(playerEnemigo);
+     Player jugadorSolicitante = server.buscarPlayer(playerSolicitante);
        
      for(int i = 0; i < server.conexiones.size(); i++){
             ThreadServer current = server.conexiones.get(i);
             
-            if(current.nombre.equals(server.players.get(i).nombre)){      
+            if(current.nombre.equals(jugadorSolicitante.nombre)){      
                 current.writer.writeInt(4);            
                 
                   for(int row = 0; row < server.players.get(i).tablero.length; row++)
@@ -119,7 +120,7 @@ public class ThreadServer extends Thread {
                         current.writer.writeInt(playerTmp.tablero[row][col].visible);
                         current.writer.writeInt(playerTmp.tablero[row][col].revelada);
                     }
-                  break;
+                break;
             }   
      }          
    }
@@ -452,8 +453,9 @@ public class ThreadServer extends Thread {
                    break;
                    
                    case 3:
+                       String jugadorSolicitante = reader.readUTF();
                        String enemigoDeseado = reader.readUTF();
-                       updateMatrizClienteEnemigo(enemigoDeseado);
+                       updateMatrizClienteEnemigo(enemigoDeseado, jugadorSolicitante);
                       
                    break;
                    

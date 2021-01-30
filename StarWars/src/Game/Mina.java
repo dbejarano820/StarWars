@@ -22,7 +22,7 @@ public class Mina extends Componentes {
 
     public Mina(int velocidad, int cantidad, String nombre, int vida, Player owner) {
         super(nombre, vida, owner);
-        this.velocidad = velocidad;
+        this.velocidad = velocidad*1000;
         this.cantidad = cantidad;
         this.conexiones = new ArrayList<Componentes>();
         this.running = true;
