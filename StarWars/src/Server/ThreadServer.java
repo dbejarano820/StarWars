@@ -252,11 +252,7 @@ public class ThreadServer extends Thread {
                            
                         msj = "(Chat) " + usuario + " > "+ comandos[1]; 
 
-                        for(int i = 0; i < server.conexiones.size(); i++){
-                            ThreadServer current = server.conexiones.get(i);
-                            current.writer.writeInt(4);
-                            current.writer.writeUTF(msj);                 
-                        }                           
+                           mandarConsolaTodas(msj);
                            
                        }
                         else if(comandos[0].equals("mercado")){
