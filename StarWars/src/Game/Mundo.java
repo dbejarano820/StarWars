@@ -104,7 +104,7 @@ public class Mundo extends Componentes {
 
     @Override
     public int conectado() {
-        int res = 0;
+        int res = 1;
         if(revisado){
             return 1;
         }
@@ -121,14 +121,10 @@ public class Mundo extends Componentes {
         }
         
         for(int i = 0; i < conexiones.size(); i++){
-            res = res + conexiones.get(i).conectado();
+            res = res * conexiones.get(i).conectado();
         }
         
-        if(res == 0)
-            return 1;
-        else{
-            return 0;
-        }
+        return res;
 
     }
 
