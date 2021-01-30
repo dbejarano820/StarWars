@@ -5,6 +5,7 @@
  */
 package Game;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -134,10 +135,13 @@ public class Mina extends Componentes {
             try {
                 sleep(velocidad);
                 owner.Acero += cantidad;
+                owner.server.conexiones.get(0).updateDinero();
                 
             } catch (InterruptedException ex) {
                 Logger.getLogger(Mina.class.getName()).log(Level.SEVERE, null, ex);
                 break;
+            } catch (IOException ex) {
+                Logger.getLogger(Mina.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         

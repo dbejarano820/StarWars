@@ -287,7 +287,7 @@ public class ThreadServer extends Thread {
                            
                        }
                         else if(comandos[0].equals("buy")){   //
-                        if(server.getTurno().equals(usuario) || !server.areAllReady()){  
+                        if(!server.areAllReady() || server.getTurno().equals(usuario)){  
                             componente = comandos[1];
                             x = Integer.parseInt(comandos[3]);
                             y = Integer.parseInt(comandos[5]);
