@@ -129,7 +129,7 @@ public class Mina extends Componentes {
     public String morir(Player atacante) {
         this.running = false;
         
-        return "El jugador "+atacante.nombre + " destruyo una mina de "+ this.owner.nombre;
+        return "El jugador "+atacante.nombre + " destruyo una mina de "+ this.owner.nombre+"\n";
     }
     
     @Override
