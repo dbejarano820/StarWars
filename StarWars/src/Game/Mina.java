@@ -117,7 +117,9 @@ public class Mina extends Componentes {
         if(componente != null && componente.getClass().getSimpleName().equals("Conector")){
             this.conexiones.add(componente);
             componente.conexiones.add(this);
+            System.out.println("Se conecto"+this.nombre);
         }
+        System.out.println("No se conecto"+this.nombre);
         
     }
 
