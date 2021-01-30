@@ -41,7 +41,7 @@ public class Cliente {
         hiloPlayer.start();
         String nombreTmp = JOptionPane.showInputDialog("Enter your name:");
         this.nombre = nombreTmp;
-        refPantalla.setTitle(nombre + " --- Sea Wars");
+        refPantalla.setTitle(nombre + " --- Star Wars");
         refPantalla.setCliente(this);
         hiloPlayer.writer.writeInt(1); //instruccion para el switch del thraed servidor
         hiloPlayer.writer.writeUTF(nombre); //instruccion para el switch del thraed servidor

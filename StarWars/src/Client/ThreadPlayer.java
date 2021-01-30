@@ -111,7 +111,7 @@ public class ThreadPlayer extends Thread {
                     case 7: //caso para venderle algo a otro jugador
                         
                         String messageTrade = reader.readUTF();
-                        refPantalla.addConsolaPropia(messageTrade);                      
+                        refPantalla.addConsolaPropia(messageTrade + "\n");                      
                     break;
                     
                     }

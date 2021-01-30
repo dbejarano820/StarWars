@@ -308,7 +308,7 @@ public class ThreadServer extends Thread {
                                        if(server.conexiones.get(i).nombre.equals(jugadorTmp2.nombre)){
                                            ThreadServer current = server.conexiones.get(i);
                                            current.writer.writeInt(7);
-                                           current.writer.writeUTF(jugadorTmp.nombre + " le ofrece " + server.tradeItemQuantity + server.tradeItem + " a cambio de $" + server.tradePrice);
+                                           current.writer.writeUTF(jugadorTmp.nombre + " le ofrece " + server.tradeItemQuantity +" "+ server.tradeItem + " a cambio de $" + server.tradePrice + "\n ingrese el siguiente comando para responder: trade-accept/deny");
                                            break;
                                        }
                                    }
@@ -344,7 +344,13 @@ public class ThreadServer extends Thread {
                                        jugadorTmp.combo += 1;
                                        jugadorTmp.Dinero -= 5000;
                                        mandarConsola("El trato fue efectivo!");
-                                   }                                   
+                                   }  
+                                  else if(articulo.equals("nave") && jugadorTmp.Dinero> 2500){
+                                       jugadorTmp.nave += 1;
+                                       jugadorTmp.Dinero -= 2500;
+                                       mandarConsola("El trato fue efectivo!");
+                                   }                                      
+                                   
                                    else{
                                        mandarConsola("No es posible llevar a cabo el trato!");
                                    }                                    
@@ -498,7 +504,7 @@ public class ThreadServer extends Thread {
                         else if(comandos[0].equals("inventory")){
                            String inventory = "";
                            inventory += " \n  Armas en bodega: \n Misiles: " + jugadorTmp.misiles + "\n Multishots: " + jugadorTmp.multi + "\n Bombas: " + jugadorTmp.bombas
-                                   + "\n Comboshots:" + jugadorTmp.combo;  
+                                   + "\n Comboshots:" + jugadorTmp.combo + "\n Naves: " + jugadorTmp.nave;  
                             
                            mandarConsola(inventory);
                            
@@ -515,32 +521,32 @@ public class ThreadServer extends Thread {
                                    if(server.tradeItem.equals("acero")){
                                        jugadorTmp.Acero += server.tradeItemQuantity;
                                        server.tradeOwner.Acero -= server.tradeItemQuantity;
-                                       mandarConsolaTodas("Unt trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
+                                       mandarConsolaTodas("Un trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
                                    }
                                    else if(server.tradeItem.equals("misil")){
                                        jugadorTmp.misiles += server.tradeItemQuantity;
                                        server.tradeOwner.misiles -= server.tradeItemQuantity;
-                                       mandarConsolaTodas("Unt trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
+                                       mandarConsolaTodas("Un trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
                                    }
                                    else if(server.tradeItem.equals("bomba")){
                                        jugadorTmp.bombas += server.tradeItemQuantity;
                                        server.tradeOwner.bombas -= server.tradeItemQuantity;
-                                       mandarConsolaTodas("Unt trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
+                                       mandarConsolaTodas("Un trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
                                    }
                                    else if(server.tradeItem.equals("multishot")){
                                        jugadorTmp.multi += server.tradeItemQuantity;
                                        server.tradeOwner.multi -= server.tradeItemQuantity;
-                                       mandarConsolaTodas("Unt trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
+                                       mandarConsolaTodas("Un trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
                                    }                                   
                                    else if(server.tradeItem.equals("combo")){
                                        jugadorTmp.combo += server.tradeItemQuantity;
                                        server.tradeOwner.combo -= server.tradeItemQuantity;
-                                       mandarConsolaTodas("Unt trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
+                                       mandarConsolaTodas("Un trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " fue efectivo!");
                                    }                             
                             }
                             else if(comandos[1].equals("deny")){
                                 
-                                mandarConsolaTodas("Unt trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " no se llevó a cabo!!");
+                                mandarConsolaTodas("Un trato entre " + server.tradeOwner.nombre + " y " + jugadorTmp.nombre + " no se llevó a cabo!!");
                                 
                             }
                         }
@@ -556,13 +562,13 @@ public class ThreadServer extends Thread {
                                res += "\n    Precios de componentes:\n Mundo: $12000\n Conector: $100\n Mercado: $2000\n Mina: $1000\n Armeria: $1500\n Templo: $2500\n"; 
                                 mandarConsola(res);
                             }
-                            else if(comandos[1].equals("armario")){
+                            else if(comandos[1].equals("armeria")){
                                res += "\n    Precios de armas disponibles:\n Misil: 500kg acero\n Multi-shot: 1000kg acero\n Bomba: 2000kg acero\n Combo-shot: 5000kg acero";
                                 mandarConsola(res);
                             }   
                             else if(comandos[1].equals("mercado")){
                                 res += "\n    Precios fijos del mercado: \n\n  El mercado de te compra:\n 1000kg acero se compra por $1000 \n 1 misil se compra por $400\n 1 Multishot se compra por $900\n 1 Bomba se compra por $1900\n 1 Comboshot se compra por $4900\n\n"
-                                        + "  El mercado te vende:\n 1000kg de acero por $1000\n 1 Misil por $500\n 1 Multishot por $1000\n 1 Bomba por $2000\n 1 Comboshot por $5000";
+                                        + "  El mercado te vende:\n 1000kg de acero por $1000\n 1 Misil por $500\n 1 Multishot por $1000\n 1 Bomba por $2000\n 1 Comboshot por $5000\n 1 Nave por $2500";
                                 mandarConsola(res);
                             }                             
                        }    

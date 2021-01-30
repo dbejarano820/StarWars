@@ -46,7 +46,7 @@ public class PantallaCliente extends javax.swing.JFrame {
     }
     
     public void pintarDinero(int Dinero, int acero){
-        lblDinero.setText(Dinero + "");
+        lblDinero.setText("$"+Dinero + "");
         lblAcero.setText(acero + "");
     }
     
