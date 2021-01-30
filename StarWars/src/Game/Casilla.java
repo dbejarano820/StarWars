@@ -5,6 +5,7 @@
  */
 package Game;
 
+import java.awt.Color;
 import javax.swing.JLabel;
 
 /**
@@ -49,6 +50,7 @@ public class Casilla {
     newLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     newLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
     newLabel.setOpaque(true);
+    newLabel.setBackground(Color.lightGray);
     newLabel.setSize(30,30);
     newLabel.setLocation(0,0);
     this.refLabel = newLabel;
