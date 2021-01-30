@@ -83,7 +83,7 @@ public class Mundo extends Componentes {
                     if(owner.tablero[i][j].explotado == 0 && owner.tablero[i][j].componente != null){
                        owner.tablero[i][j].explotado = 1;
                        owner.tablero[i][j].componente.vida -= 1;
-                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de una mina ubicada en ("+x1+","+y1+"), en ("+x2+","+y2+"), en ("+x3+","+y3+") y en ("+x4+","+y4+") \n";
+                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de un mundo ubicada en ("+x1+","+y1+"), en ("+x2+","+y2+"), en ("+x3+","+y3+") y en ("+x4+","+y4+") \n";
                        if(owner.tablero[i][j].componente.vida == 0){
                            res += owner.tablero[i][j].componente.explotar();
                        }

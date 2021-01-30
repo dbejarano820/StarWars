@@ -66,7 +66,7 @@ public class Templo extends Componentes{
                     if(owner.tablero[i][j].explotado == 0 && owner.tablero[i][j].componente != null){
                        owner.tablero[i][j].explotado = 1;
                        owner.tablero[i][j].componente.vida -= 1;
-                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de una mina ubicada en ("+x1+","+y1+") y en ("+x2+","+y2+") \n";
+                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de un templo ubicada en ("+x1+","+y1+") y en ("+x2+","+y2+") \n";
                        if(owner.tablero[i][j].componente.vida == 0){
                            res += owner.tablero[i][j].componente.explotar();
                        }

@@ -56,7 +56,7 @@ public class Conector extends Componentes{
                     if(owner.tablero[i][j].explotado == 0 && owner.tablero[i][j].componente != null){
                        owner.tablero[i][j].explotado = 1;
                        owner.tablero[i][j].componente.vida -= 1;
-                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de una mina ubicada en ("+x+","+y+") \n";
+                       res += "La casilla ("+j+","+i+") fue afectada debido al radio de explosion de un conector ubicada en ("+x+","+y+") \n";
                        if(owner.tablero[i][j].componente.vida == 0){
                            res += owner.tablero[i][j].componente.explotar();
                        }
