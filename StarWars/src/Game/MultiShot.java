@@ -50,18 +50,18 @@ public class MultiShot {
                                 victima.tablero[y1][x1].explotado = 1;
                                 res += "La casilla ("+x1+","+y1+") de "+victima.nombre+" fue victima de las secuelas del MultiShot enviado por "+atacante.nombre+"\n";
                                 
-                                if(victima.tablero[y][x].componente.vida == 0){
-                                    res += victima.tablero[y][x].componente.morir(atacante);
-                                    res += victima.tablero[y][x].componente.explotar();
+                                if(victima.tablero[y1][x1].componente.vida == 0){
+                                    res += victima.tablero[y1][x1].componente.morir(atacante);
+                                    res += victima.tablero[y1][x1].componente.explotar();
                                 }
                             }
                         }
                         else{
-                           res += "La casilla ("+x+","+y+") de "+victima.nombre+" no le afecto la secuela del MultiShot enviado por "+atacante.nombre+" porque ya estaba muerta\n"; 
+                           res += "La casilla ("+x1+","+y1+") de "+victima.nombre+" no le afecto la secuela del MultiShot enviado por "+atacante.nombre+" porque ya estaba muerta\n"; 
                         }
                     }
                     else{
-                        res += "La casilla ("+x+","+y+") de "+victima.nombre+" no le afecto la secuela del MultiShot enviado por "+atacante.nombre+" porque en esa zona no hay nada\n";
+                        res += "La casilla ("+x1+","+y1+") de "+victima.nombre+" no le afecto la secuela del MultiShot enviado por "+atacante.nombre+" porque en esa zona no hay nada\n";
                     }
                 }   
             }
