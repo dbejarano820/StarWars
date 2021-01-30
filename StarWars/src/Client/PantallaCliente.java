@@ -350,9 +350,12 @@ public class PantallaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRefreshEnemyActionPerformed
 
     private void btnNextPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextPlayerActionPerformed
-        
-        refCliente.
-        
+     
+        try{
+         refCliente.hiloPlayer.writer.writeInt(4);
+        } catch (IOException ex){
+            
+        }
         
     }//GEN-LAST:event_btnNextPlayerActionPerformed
 
