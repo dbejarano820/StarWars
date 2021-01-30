@@ -28,6 +28,8 @@ public class Conector extends Componentes{
         String res = "";
         for(int i = 0; i < owner.tablero.length;i++){
             for(int j  = 0; j< owner.tablero[i].length;j++){
+                if(owner.tablero[i][j].componente == null || owner.tablero[i][j].componente.getClass().getSimpleName().equals("HoyoNegro"))
+                    continue;
                 
                 if(owner.tablero[i][j].componente.equals(this)){
                     if(x == -1 && y == -1){
