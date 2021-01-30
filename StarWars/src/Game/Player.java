@@ -25,6 +25,7 @@ public class Player {
     public int multi;
     public int bombas;
     public int combo;
+    public int nave;
     public Casilla[][] tablero;
     public Server server;
     
