@@ -34,6 +34,11 @@ public class Server {
      public int Dinero;
      public int velocidadMina;
      public int cantidadMina;
+     
+     public Player tradeOwner = null;
+     public String tradeItem = "";
+     public int tradeItemQuantity = 0;
+     public int tradePrice = 0;
 
     public void setDinero(int Dinero) {
         this.Dinero = Dinero;
