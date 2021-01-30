@@ -25,12 +25,12 @@ public class PantallaCliente extends javax.swing.JFrame {
     public Cliente refCliente;
     String nombreTurno;
     String pathMundo = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Planet.png";
-    String pathConector = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Conector.png";
-    String pathMercado = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Market.jpg";
-    String pathMina = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Mina.jpg";
-    String pathArmory = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Armory.jpg";
-    String pathTemple = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Temple.jpg";
-    String pathHoyoNegro = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\HoyoNegro.jpg";
+    String pathConector = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Connector.png";
+    String pathMercado = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Market.png";
+    String pathMina = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Mina.png";
+    String pathArmory = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Armory.png";
+    String pathTemple = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\Temple.png";
+    String pathHoyoNegro = "C:\\Users\\PERSONAL\\OneDrive\\Documents\\GitHub\\StarWars\\StarWars\\src\\Images\\HoyoNegro.png";
 
     public PantallaCliente() {
         initComponents();
@@ -43,6 +43,11 @@ public class PantallaCliente extends javax.swing.JFrame {
     
     public void setNombreTurno(String player){
         this.nombreTurno = player;
+    }
+    
+    public void pintarDinero(int Dinero, int acero){
+        lblDinero.setText(Dinero + "");
+        lblAcero.setText(acero + "");
     }
     
     public void pintarTurno(String player){
@@ -79,10 +84,10 @@ public class PantallaCliente extends javax.swing.JFrame {
     
     public void generarTableroEnemigo(){
 
-        for(int row = 0; row < refCliente.tableroCliente.length; row++){  //refCliente.tableroCliente.length
-            for(int col = 0; col < refCliente.tableroCliente[row].length; col++){ //refCliente.tableroCliente[row].length
-                refCliente.tableroCliente[row][col] = new Casilla();  
-                JLabel labelTmp = refCliente.tableroCliente[row][col].generateLabel();
+        for(int row = 0; row < refCliente.tableroEnemigo.length; row++){  //refCliente.tableroCliente.length
+            for(int col = 0; col < refCliente.tableroEnemigo[row].length; col++){ //refCliente.tableroCliente[row].length
+                refCliente.tableroEnemigo[row][col] = new Casilla();  
+                JLabel labelTmp = refCliente.tableroEnemigo[row][col].generateLabel();
                 this.jPanelEnemigos.add(labelTmp);
                 labelTmp.setLocation(((col*30)), ((row*30))); 
             }
@@ -181,11 +186,11 @@ public class PantallaCliente extends javax.swing.JFrame {
         txtAreaConsola = new java.awt.TextArea();
         txtFieldConsola = new java.awt.TextField();
         btnSend = new javax.swing.JButton();
-        lblPlayerName1 = new javax.swing.JLabel();
+        lblAcero = new javax.swing.JLabel();
         lblPlayerName2 = new javax.swing.JLabel();
         lblPlayerTurno = new javax.swing.JLabel();
         lblPlayerName4 = new javax.swing.JLabel();
-        lblPlayerName6 = new javax.swing.JLabel();
+        lblDinero = new javax.swing.JLabel();
         lblPlayerName5 = new javax.swing.JLabel();
         lblPlayerEnemyName = new javax.swing.JLabel();
         lblPlayerName = new javax.swing.JLabel();
@@ -221,16 +226,21 @@ public class PantallaCliente extends javax.swing.JFrame {
         txtFieldConsola.setBounds(140, 870, 1080, 30);
 
         btnSend.setText("Send");
+        btnSend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSendActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnSend);
         btnSend.setBounds(1220, 870, 73, 30);
 
-        lblPlayerName1.setBackground(new java.awt.Color(255, 255, 255));
-        lblPlayerName1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblPlayerName1.setForeground(new java.awt.Color(0, 0, 0));
-        lblPlayerName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPlayerName1.setOpaque(true);
-        getContentPane().add(lblPlayerName1);
-        lblPlayerName1.setBounds(40, 330, 130, 40);
+        lblAcero.setBackground(new java.awt.Color(255, 255, 255));
+        lblAcero.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblAcero.setForeground(new java.awt.Color(0, 0, 0));
+        lblAcero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAcero.setOpaque(true);
+        getContentPane().add(lblAcero);
+        lblAcero.setBounds(40, 330, 130, 40);
 
         lblPlayerName2.setBackground(new java.awt.Color(255, 255, 255));
         lblPlayerName2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -258,13 +268,13 @@ public class PantallaCliente extends javax.swing.JFrame {
         getContentPane().add(lblPlayerName4);
         lblPlayerName4.setBounds(660, 10, 130, 40);
 
-        lblPlayerName6.setBackground(new java.awt.Color(255, 255, 255));
-        lblPlayerName6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblPlayerName6.setForeground(new java.awt.Color(0, 0, 0));
-        lblPlayerName6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPlayerName6.setOpaque(true);
-        getContentPane().add(lblPlayerName6);
-        lblPlayerName6.setBounds(40, 250, 130, 40);
+        lblDinero.setBackground(new java.awt.Color(255, 255, 255));
+        lblDinero.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblDinero.setForeground(new java.awt.Color(0, 0, 0));
+        lblDinero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDinero.setOpaque(true);
+        getContentPane().add(lblDinero);
+        lblDinero.setBounds(40, 250, 130, 40);
 
         lblPlayerName5.setBackground(new java.awt.Color(255, 255, 255));
         lblPlayerName5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -359,6 +369,22 @@ public class PantallaCliente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnNextPlayerActionPerformed
 
+    private void btnSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendActionPerformed
+        
+         try{
+            
+            txtAreaConsola.append(txtFieldConsola.getText() + "\n");
+            refCliente.hiloPlayer.writer.writeInt(2);
+            refCliente.hiloPlayer.writer.writeUTF(refCliente.nombre);
+            refCliente.hiloPlayer.writer.writeUTF(txtFieldConsola.getText());
+            txtFieldConsola.setText("");
+            
+        } catch (IOException ex){
+            
+        }   
+        
+    }//GEN-LAST:event_btnSendActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -400,13 +426,13 @@ public class PantallaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnSend;
     private javax.swing.JPanel jPanelEnemigos;
     private javax.swing.JPanel jPanelPropio;
+    private javax.swing.JLabel lblAcero;
+    private javax.swing.JLabel lblDinero;
     private javax.swing.JLabel lblPlayerEnemyName;
     private javax.swing.JLabel lblPlayerName;
-    private javax.swing.JLabel lblPlayerName1;
     private javax.swing.JLabel lblPlayerName2;
     private javax.swing.JLabel lblPlayerName4;
     private javax.swing.JLabel lblPlayerName5;
-    private javax.swing.JLabel lblPlayerName6;
     private javax.swing.JLabel lblPlayerTurno;
     private javax.swing.JLabel lblfondo;
     private java.awt.TextArea txtAreaConsola;

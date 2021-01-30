@@ -74,6 +74,8 @@ public class ThreadPlayer extends Thread {
                             }    
                         refPantalla.updateTableroPropio();
                         
+                    break;
+                        
                     case 4: //para actualizar la matriz del enemigo en pantalla
                         
                           for(int row = 0; row < refCliente.tableroEnemigo.length; row++)
@@ -91,11 +93,19 @@ public class ThreadPlayer extends Thread {
                             }  
                          
                           refPantalla.updateTableroEnemigo();
-                          
+                     break;    
                     case 5:
                         String playerNext = reader.readUTF();
                         refPantalla.pintarNextEnemy(playerNext);        
                         
+                    break;
+                    
+                    case 6: //update dinero
+                        
+                        int Dinero = reader.readInt();
+                        int Acero = reader.readInt();
+                        refPantalla.pintarDinero(Dinero, Acero);
+            
                     break;
                     
                     }

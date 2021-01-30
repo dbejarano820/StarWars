@@ -28,11 +28,18 @@ public class Player {
     public Server server;
     
     
-    public Player(String nombre){
+    public Player(String nombre, Server server){
         this.nombre  = nombre;
         gameReady = false;       
         tablero = new Casilla[15][15];  //row, fila ... y, x   (en pantalla es x,y)
         generateTablero();
+        this.server = server;
+        Dinero = server.Dinero;
+        Acero = 0;
+        misiles = 0;
+        multi = 0;
+        bombas = 0;
+        combo = 0;
     }
 
 

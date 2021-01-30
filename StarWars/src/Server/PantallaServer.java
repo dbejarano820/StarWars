@@ -193,7 +193,7 @@ public class PantallaServer extends javax.swing.JFrame {
         int dinero = Integer.parseInt(txtFieldDinero.getText());
         int velocidad = Integer.parseInt(txtFieldVelocidadMina.getText());
         int cantidad = Integer.parseInt(txtFieldCantidadMina.getText());
-        
+        btnConfirmSettings.setForeground(Color.green);
         srv.setDinero(dinero);
         srv.setVelocidadMina(velocidad);
         srv.setCantidadMina(cantidad); 

@@ -44,34 +44,38 @@ public class ThreadServer extends Thread {
      }           
    }
    
-    public void pintarNext(String player) throws IOException {
-       
-    for(int i = 0; i < server.conexiones.size(); i++){
-      ThreadServer current = server.conexiones.get(i);
-      current.writer.writeInt(5);
-      current.writer.writeUTF(player);                 
-     }           
-   }
  
    public void mandarConsola(String msj) throws IOException {
 
-        for(int i = 0; i < server.conexiones.size(); i++){
-            ThreadServer current = server.conexiones.get(i);
-            if(current.nombre.equals(server.players.get(i).nombre)){
-                 current.writer.writeInt(4);
-                 current.writer.writeUTF(msj);                 
-              }  
-        }  
+        writer.writeInt(2);
+        writer.writeUTF(msj);                  
    }
      public void mandarConsolaTodas(String msj) throws IOException {
 
         for(int i = 0; i < server.conexiones.size(); i++){
             ThreadServer current = server.conexiones.get(i);
-            current.writer.writeInt(4);
+            current.writer.writeInt(2);
             current.writer.writeUTF(msj);                 
                
         }  
    }  
+     
+     
+   public void updateDinero() throws IOException {
+       
+       for(int i = 0; i < server.conexiones.size(); i++){
+            ThreadServer current = server.conexiones.get(i);
+            
+            if(current.nombre.equals(server.players.get(i).nombre)){      
+                current.writer.writeInt(6);
+                current.writer.writeInt(server.players.get(i).Dinero);
+                current.writer.writeInt(server.players.get(i).Acero);
+            }   
+     }     
+       
+       
+       
+   }
    
    public void updateMatrizClientePropia() throws IOException{
        
@@ -86,9 +90,9 @@ public class ThreadServer extends Thread {
                     for(int col = 0; col < server.players.get(i).tablero[row].length; col++){
                         
                         current.writer.writeInt(server.players.get(i).tablero[row][col].ID);
-                        current.writer.writeInt(server.players.get(i).tablero[row][col].ID);
-                        current.writer.writeInt(server.players.get(i).tablero[row][col].ID);
-                        current.writer.writeInt(server.players.get(i).tablero[row][col].ID);
+                        current.writer.writeInt(server.players.get(i).tablero[row][col].explotado);
+                        current.writer.writeInt(server.players.get(i).tablero[row][col].visible);
+                        current.writer.writeInt(server.players.get(i).tablero[row][col].revelada);
                     }              
             }   
      }  
@@ -109,10 +113,11 @@ public class ThreadServer extends Thread {
                     for(int col = 0; col < server.players.get(i).tablero[row].length; col++){
                         
                         current.writer.writeInt(playerTmp.tablero[row][col].ID);
-                        current.writer.writeInt(playerTmp.tablero[row][col].ID);
-                        current.writer.writeInt(playerTmp.tablero[row][col].ID);
-                        current.writer.writeInt(playerTmp.tablero[row][col].ID);
-                    }              
+                        current.writer.writeInt(playerTmp.tablero[row][col].explotado);
+                        current.writer.writeInt(playerTmp.tablero[row][col].visible);
+                        current.writer.writeInt(playerTmp.tablero[row][col].revelada);
+                    }
+                  break;
             }   
      }          
    }
@@ -147,7 +152,8 @@ public class ThreadServer extends Thread {
                    
                    case 1: //caso para agregar jugador a la lista
                        nombre = reader.readUTF();
-                       server.players.add(new Player(nombre));
+                       server.players.add(new Player(nombre, server));
+                       updateDinero();
                        //add player to list of players del server           
                    break;
                    
@@ -186,8 +192,8 @@ public class ThreadServer extends Thread {
                            else if(comandos[1].equals("conector")){
                                x = Integer.parseInt(comandos[3]);
                                y = Integer.parseInt(comandos[5]);
-                               xC = Integer.parseInt(comandos[7]);
-                               yC = Integer.parseInt(comandos[9]);
+                               xC = Integer.parseInt(comandos[8]);
+                               yC = Integer.parseInt(comandos[10]);
                                
                                Conector conector = new Conector("conector", 1, jugadorTmp);
                                jugadorTmp.tablero[y][x].componente = conector;
@@ -273,11 +279,13 @@ public class ThreadServer extends Thread {
                    case 4:
                        String next = server.getNextName();
                        if(!nombre.equals(next)){
-                           pintarNext(next);
+                           writer.writeInt(5);
+                           writer.writeUTF(next);
                        }
                        else{
                            String next1 = server.getNextName();
-                           pintarNext(next);
+                           writer.writeInt(5);
+                           writer.writeUTF(next1);
                        }
                    break;
                    

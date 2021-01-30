@@ -39,6 +39,7 @@ public class Casilla {
         explotado = 0;
         visible = 0;
         revelada = 0;
+        ID = 0;
     }
     
     public JLabel generateLabel(){      // se utiliza para generar el reflabel de las casillas del cliente, el player no lo necesita
