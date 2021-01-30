@@ -72,6 +72,7 @@ public class ThreadPlayer extends Thread {
                                 refCliente.tableroCliente[row][col].visible = visible;
                                 refCliente.tableroCliente[row][col].revelada = revelada;
                             }    
+                        refPantalla.updateTableroPropio();
                         
                     case 4: //para actualizar la matriz del enemigo en pantalla
                         
@@ -88,14 +89,15 @@ public class ThreadPlayer extends Thread {
                                 refCliente.tableroEnemigo[row][col].visible = visible;
                                 refCliente.tableroEnemigo[row][col].revelada = revelada;
                             }  
-                          
+                         
+                          refPantalla.updateTableroEnemigo();
                           
                     case 5:
                         String playerNext = reader.readUTF();
                         refPantalla.pintarNextEnemy(playerNext);        
                         
                     break;
-                      
+                    
                     }
                 } catch (IOException ex) {
                         
