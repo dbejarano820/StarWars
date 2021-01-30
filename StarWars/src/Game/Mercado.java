@@ -109,7 +109,9 @@ public class Mercado extends Componentes {
         if(componente != null && componente.getClass().getSimpleName().equals("Conector")){
             this.conexiones.add(componente);
             componente.conexiones.add(this);
+            System.out.println("Se conecto");
         }
+        System.out.println("NO se conecto");
         
     }
 
