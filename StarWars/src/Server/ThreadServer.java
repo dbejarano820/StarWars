@@ -287,7 +287,7 @@ public class ThreadServer extends Thread {
                            
                        }
                         else if(comandos[0].equals("buy")){   //
-                        if(server.getTurno().equals(usuario) || !server.areAllReady()){  
+                        if(!server.areAllReady() || server.getTurno().equals(usuario)){  
                             componente = comandos[1];
                             x = Integer.parseInt(comandos[3]);
                             y = Integer.parseInt(comandos[5]);
@@ -427,7 +427,12 @@ public class ThreadServer extends Thread {
                             
                            mandarConsola(inventory);
                            
-                       }                      
+                       }  
+                        else if(comandos[0].equals("armeria")){
+                            
+                           String arma = comandos[1];
+                           mandarConsola(jugadorTmp.comprarArmas(arma)); 
+                        }
                         else if(comandos[0].equals("info")){
                             String res = "";
                             if(comandos[1].equals("componentes")){
