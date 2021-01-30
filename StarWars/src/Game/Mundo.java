@@ -104,28 +104,7 @@ public class Mundo extends Componentes {
 
     @Override
     public int conectado() {
-        int res = 1;
-        if(revisado){
-            return 1;
-        }
-        revisado = true;
-        
-        if(this.vida == 0){
-            return 1;
-        }
-        
-        for(int i = 0; i < conexiones.size(); i++){
-            if(conexiones.get(i).getClass().getSimpleName().equals("Mundo") && conexiones.get(i).vida > 0){
-                return 0;
-            }
-        }
-        
-        for(int i = 0; i < conexiones.size(); i++){
-            res = res * conexiones.get(i).conectado();
-        }
-        
-        return res;
-
+        return 0;
     }
 
     @Override
