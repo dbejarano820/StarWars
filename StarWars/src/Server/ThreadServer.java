@@ -274,6 +274,7 @@ public class ThreadServer extends Thread {
                                    Player jugadorTmp2 = server.buscarPlayer(comandos[2]);
                                    
                                    //vender a player, armas u acero
+                                   //
                                 }          
                            }
                               else if(mercadoDecision.equals("comprar")){
@@ -286,7 +287,7 @@ public class ThreadServer extends Thread {
                            
                        }
                         else if(comandos[0].equals("buy")){   //
-                        if(server.getTurno().equals(usuario)){  
+                        if(server.getTurno().equals(usuario) || !server.areAllReady()){  
                             componente = comandos[1];
                             x = Integer.parseInt(comandos[3]);
                             y = Integer.parseInt(comandos[5]);
@@ -327,12 +328,48 @@ public class ThreadServer extends Thread {
                                 x = Integer.parseInt(comandos[4]);
                                 y = Integer.parseInt(comandos[6]);
                                 
-                                //atacar al jugador tmp
-                         
+                                if(arma.equals("misil")){
+                                    if(jugadorTmp.misiles > 0)
+                                    mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x, y));
+                                    else{
+                                        mandarConsola("No tienes suficientes misiles para atacar!");
+                                    }
+                                }
+                                else if(arma.equals("bomba")){
+                                    int x2 = Integer.parseInt(comandos[8]);
+                                    int y2 = Integer.parseInt(comandos[10]);
+                                    int x3 = Integer.parseInt(comandos[12]);
+                                    int y3 = Integer.parseInt(comandos[14]);
+                                    
+                                    if(jugadorTmp.bombas > 0){
+                                    mandarConsolaTodas(Bomba.atacar(jugadorTmp, jugadorTarget, x, y));
+                                    mandarConsolaTodas(Bomba.atacar(jugadorTmp, jugadorTarget, x2, y2));
+                                    mandarConsolaTodas(Bomba.atacar(jugadorTmp, jugadorTarget, x3, y3));
+                                    }
+                                    else
+                                        mandarConsola("No tienes suficientes bombas para atacar!");
+                                }
+                                else if(arma.equals("multishot")){
+                                    if(jugadorTmp.multi > 0)
+                                    mandarConsolaTodas(MultiShot.atacar(jugadorTmp, jugadorTarget, x, y));
+                                    else
+                                        mandarConsola("No tienes suficientes multishots para atacar!");
+                                }
+                                else if(arma.equals("comboshot")){
+                                    if(jugadorTmp.combo > 0){
+                                       // int 
+                                //    mandarConsolaTodas(ComboShot.atacar(jugadorTmp, jugadorTarget, x, y));
+                                    }
+                                  //  else
+                                        mandarConsola("No tienes suficientes comboshots para atacar!");
+                                }
                             updateMatrizClientePropia();
-                            updateDinero();                             
+                            updateDinero();  
+                            pasarTurno();
                                 
-                            }          
+                            }
+                            else
+                                mandarConsola("No es tu turno!!");
                        }         
                         
                         else if(comandos[0].equals("start")){    //comando para start game
@@ -359,6 +396,7 @@ public class ThreadServer extends Thread {
                                    + "\n Comboshots:" + jugadorTmp.combo;  
                             
                            mandarConsola(inventory);
+                           
                        }                      
                         else if(comandos[0].equals("info")){
                             String res = "";
