@@ -89,6 +89,7 @@ public class Player {
             else if(tipo.equals("multishot")){
                 if(Acero > 1000){
                     multi++;
+                    Acero-=1000;
                     res+= "El jugador "+nombre+" compró un Multi Shot";
                 }
                 else{
@@ -99,6 +100,7 @@ public class Player {
             else if(tipo.equals("bomba")){
                 if(Acero > 2000){
                     bombas++;
+                    Acero-=2000;
                     res+= "El jugador "+nombre+" compró una bomba";
                 }
                 else{
@@ -109,6 +111,7 @@ public class Player {
             else if(tipo.equals("comboshot")){
                 if(Acero > 5000){
                     combo++;
+                    Acero-=5000;
                     res+= "El jugador "+nombre+" compró un ComboShot";
                 }
                 else{
