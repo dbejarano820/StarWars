@@ -117,7 +117,7 @@ public class Armeria extends Componentes{
 
     @Override
     public String morir(Player atacante) {
-        return "El jugador "+atacante.nombre + " destruyo una armeria de "+tipoArma+" de "+ this.owner.nombre+"\n";
+        return "El jugador "+atacante.nombre + " destruyo una estructura de "+tipoArma+" de "+ this.owner.nombre+"\n";
     }
     
 }

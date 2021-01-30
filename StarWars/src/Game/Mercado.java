@@ -119,7 +119,7 @@ public class Mercado extends Componentes {
 
     @Override
     public String morir(Player atacante) {
-        return "El jugador "+atacante.nombre + " destruyo un mercado de "+ this.owner.nombre+"\n";
+        return "El jugador "+atacante.nombre + " destruyo una estructura de "+ this.owner.nombre+"\n";
     }
     
     

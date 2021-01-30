@@ -111,7 +111,7 @@ public class Conector extends Componentes{
 
     @Override
     public String morir(Player atacante) {
-        return "El jugador "+atacante.nombre + " destruyo un conector de "+ this.owner.nombre+"\n";
+        return "El jugador "+atacante.nombre + " destruyo una estructura de "+ this.owner.nombre+"\n";
 
     }
     

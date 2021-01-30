@@ -101,7 +101,7 @@ public class Mundo extends Componentes {
     @Override
     public String morir(Player atacante) {
         atacante.Dinero += 10000;
-        return "El jugador "+atacante.nombre+" destruyo el mundo de "+this.owner.nombre+ " y gano 10000"+"\n";
+        return "El jugador "+atacante.nombre+" destruyo un mundo de "+this.owner.nombre+ " y gano 10000"+"\n";
     }
 
     @Override

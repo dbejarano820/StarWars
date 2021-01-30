@@ -16,6 +16,10 @@ public class Misil {
     public static String atacar(Player atacante,Player victima, int x, int y){
         String res = "";
         if( victima.tablero[y][x].componente != null){
+            if(victima.tablero[y][x].componente.getClass().getSimpleName().equals("HoyoNegro")){
+                HoyoNegro hoyo = (HoyoNegro)victima.tablero[y][x].componente;
+                return hoyo.retornarAtaque(atacante);
+            }
             if(victima.tablero[y][x].explotado == 0){
                 if(victima.tablero[y][x].componente.escudo > 0){
                     victima.tablero[y][x].componente.escudo--;

@@ -142,7 +142,7 @@ public class Templo extends Componentes{
     @Override
     public String morir(Player atacante) {
         this.running = false;
-        return "El jugador "+atacante.nombre + " destruyo un templo de "+ this.owner.nombre+"\n";
+        return "El jugador "+atacante.nombre + " destruyo una estructura de "+ this.owner.nombre+"\n";
 
     }
     
