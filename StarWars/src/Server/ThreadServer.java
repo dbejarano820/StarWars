@@ -316,6 +316,7 @@ public class ThreadServer extends Thread {
                                 jugadorTmp.comprarEstructura(componente, x, y, dirrecion, xC, yC, "nada");                               
                                 
                             }
+                            jugadorTmp.setVisibilidad();
                             updateMatrizClientePropia();
                             updateDinero();
                         }         
@@ -375,6 +376,7 @@ public class ThreadServer extends Thread {
                                         int y9 = Integer.parseInt(comandos[38]);
                                         int x10 = Integer.parseInt(comandos[40]);
                                         int y10 = Integer.parseInt(comandos[42]);
+                                        mandarConsolaTodas(jugadorTmp.nombre + " ha lanzado un ComboShot hacia " + jugadorTarget.nombre + " !!!");
                                         mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x, y));
                                         mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x2, y2));
                                         mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x3, y3));
@@ -389,6 +391,8 @@ public class ThreadServer extends Thread {
                                     else
                                         mandarConsola("No tienes suficientes comboshots para atacar!");
                                 }
+                            jugadorTarget.setVisibilidad();
+                            jugadorTmp.setVisibilidad();
                             updateMatrizClientePropia();
                             updateDinero();  
                             pasarTurno();
