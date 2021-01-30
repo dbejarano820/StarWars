@@ -370,7 +370,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         lblPlayerName.setBounds(330, 20, 230, 40);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.lightGray);
+        jLabel1.setForeground(new java.awt.Color(153, 153, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("2");
         jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -379,7 +379,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel1.setBounds(180, 170, 30, 30);
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel2.setForeground(java.awt.Color.lightGray);
+        jLabel2.setForeground(new java.awt.Color(153, 153, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("0");
         jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -388,7 +388,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel2.setBounds(180, 110, 30, 30);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel3.setForeground(java.awt.Color.lightGray);
+        jLabel3.setForeground(new java.awt.Color(153, 153, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("1");
         jLabel3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -397,7 +397,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel3.setBounds(180, 140, 30, 30);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.lightGray);
+        jLabel4.setForeground(new java.awt.Color(153, 153, 0));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("3");
         jLabel4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -406,7 +406,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel4.setBounds(180, 200, 30, 30);
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel5.setForeground(java.awt.Color.lightGray);
+        jLabel5.setForeground(new java.awt.Color(153, 153, 0));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("4");
         jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -415,7 +415,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel5.setBounds(180, 230, 30, 30);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel6.setForeground(java.awt.Color.lightGray);
+        jLabel6.setForeground(new java.awt.Color(153, 153, 0));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("5");
         jLabel6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -424,7 +424,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel6.setBounds(180, 260, 30, 30);
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel7.setForeground(java.awt.Color.lightGray);
+        jLabel7.setForeground(new java.awt.Color(153, 153, 0));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("10");
         jLabel7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -433,7 +433,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel7.setBounds(180, 410, 30, 30);
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel8.setForeground(java.awt.Color.lightGray);
+        jLabel8.setForeground(new java.awt.Color(153, 153, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("11");
         jLabel8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -442,7 +442,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel8.setBounds(180, 440, 30, 30);
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel9.setForeground(java.awt.Color.lightGray);
+        jLabel9.setForeground(new java.awt.Color(153, 153, 0));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("9");
         jLabel9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -451,7 +451,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel9.setBounds(180, 380, 30, 30);
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel10.setForeground(java.awt.Color.lightGray);
+        jLabel10.setForeground(new java.awt.Color(153, 153, 0));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("6");
         jLabel10.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -460,7 +460,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel10.setBounds(180, 290, 30, 30);
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel11.setForeground(java.awt.Color.lightGray);
+        jLabel11.setForeground(new java.awt.Color(153, 153, 0));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("7");
         jLabel11.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -469,7 +469,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel11.setBounds(180, 320, 30, 30);
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel12.setForeground(java.awt.Color.lightGray);
+        jLabel12.setForeground(new java.awt.Color(153, 153, 0));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("8");
         jLabel12.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -478,7 +478,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel12.setBounds(180, 350, 30, 30);
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel13.setForeground(java.awt.Color.lightGray);
+        jLabel13.setForeground(new java.awt.Color(153, 153, 0));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("14");
         jLabel13.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -487,7 +487,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel13.setBounds(180, 530, 30, 30);
 
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel14.setForeground(java.awt.Color.lightGray);
+        jLabel14.setForeground(new java.awt.Color(153, 153, 0));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("12");
         jLabel14.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -496,7 +496,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel14.setBounds(180, 470, 30, 30);
 
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel15.setForeground(java.awt.Color.lightGray);
+        jLabel15.setForeground(new java.awt.Color(153, 153, 0));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("13");
         jLabel15.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -505,7 +505,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel15.setBounds(180, 500, 30, 30);
 
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel16.setForeground(java.awt.Color.lightGray);
+        jLabel16.setForeground(new java.awt.Color(153, 153, 0));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("0");
         jLabel16.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -514,7 +514,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel16.setBounds(780, 110, 30, 30);
 
         jLabel17.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel17.setForeground(java.awt.Color.lightGray);
+        jLabel17.setForeground(new java.awt.Color(153, 153, 0));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("1");
         jLabel17.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -523,7 +523,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel17.setBounds(780, 140, 30, 30);
 
         jLabel18.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel18.setForeground(java.awt.Color.lightGray);
+        jLabel18.setForeground(new java.awt.Color(153, 153, 0));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("2");
         jLabel18.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -532,7 +532,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel18.setBounds(780, 170, 30, 30);
 
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel19.setForeground(java.awt.Color.lightGray);
+        jLabel19.setForeground(new java.awt.Color(153, 153, 0));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("3");
         jLabel19.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -541,7 +541,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel19.setBounds(780, 200, 30, 30);
 
         jLabel20.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel20.setForeground(java.awt.Color.lightGray);
+        jLabel20.setForeground(new java.awt.Color(153, 153, 0));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("4");
         jLabel20.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -550,7 +550,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel20.setBounds(780, 230, 30, 30);
 
         jLabel21.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel21.setForeground(java.awt.Color.lightGray);
+        jLabel21.setForeground(new java.awt.Color(153, 153, 0));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("5");
         jLabel21.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -559,7 +559,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel21.setBounds(780, 260, 30, 30);
 
         jLabel22.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel22.setForeground(java.awt.Color.lightGray);
+        jLabel22.setForeground(new java.awt.Color(153, 153, 0));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("6");
         jLabel22.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -568,7 +568,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel22.setBounds(780, 290, 30, 30);
 
         jLabel23.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel23.setForeground(java.awt.Color.lightGray);
+        jLabel23.setForeground(new java.awt.Color(153, 153, 0));
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel23.setText("7");
         jLabel23.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -577,7 +577,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel23.setBounds(780, 320, 30, 30);
 
         jLabel24.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel24.setForeground(java.awt.Color.lightGray);
+        jLabel24.setForeground(new java.awt.Color(153, 153, 0));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel24.setText("8");
         jLabel24.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -586,7 +586,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel24.setBounds(780, 350, 30, 30);
 
         jLabel25.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel25.setForeground(java.awt.Color.lightGray);
+        jLabel25.setForeground(new java.awt.Color(153, 153, 0));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("9");
         jLabel25.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -595,7 +595,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel25.setBounds(780, 380, 30, 30);
 
         jLabel26.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel26.setForeground(java.awt.Color.lightGray);
+        jLabel26.setForeground(new java.awt.Color(153, 153, 0));
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel26.setText("10");
         jLabel26.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -604,7 +604,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel26.setBounds(780, 410, 30, 30);
 
         jLabel27.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel27.setForeground(java.awt.Color.lightGray);
+        jLabel27.setForeground(new java.awt.Color(153, 153, 0));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel27.setText("11");
         jLabel27.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -613,7 +613,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel27.setBounds(780, 440, 30, 30);
 
         jLabel28.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel28.setForeground(java.awt.Color.lightGray);
+        jLabel28.setForeground(new java.awt.Color(153, 153, 0));
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel28.setText("12");
         jLabel28.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -622,7 +622,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel28.setBounds(780, 470, 30, 30);
 
         jLabel29.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel29.setForeground(java.awt.Color.lightGray);
+        jLabel29.setForeground(new java.awt.Color(153, 153, 0));
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel29.setText("13");
         jLabel29.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -631,7 +631,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel29.setBounds(780, 500, 30, 30);
 
         jLabel30.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel30.setForeground(java.awt.Color.lightGray);
+        jLabel30.setForeground(new java.awt.Color(153, 153, 0));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setText("14");
         jLabel30.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -640,7 +640,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel30.setBounds(780, 530, 30, 30);
 
         jLabel31.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel31.setForeground(java.awt.Color.lightGray);
+        jLabel31.setForeground(new java.awt.Color(153, 153, 0));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel31.setText("0");
         jLabel31.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -649,7 +649,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel31.setBounds(210, 80, 30, 30);
 
         jLabel32.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel32.setForeground(java.awt.Color.lightGray);
+        jLabel32.setForeground(new java.awt.Color(153, 153, 0));
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel32.setText("1");
         jLabel32.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -658,7 +658,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel32.setBounds(240, 80, 30, 30);
 
         jLabel33.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel33.setForeground(java.awt.Color.lightGray);
+        jLabel33.setForeground(new java.awt.Color(153, 153, 0));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel33.setText("2");
         jLabel33.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -667,7 +667,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel33.setBounds(270, 80, 30, 30);
 
         jLabel34.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel34.setForeground(java.awt.Color.lightGray);
+        jLabel34.setForeground(new java.awt.Color(153, 153, 0));
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel34.setText("3");
         jLabel34.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -676,7 +676,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel34.setBounds(300, 80, 30, 30);
 
         jLabel35.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel35.setForeground(java.awt.Color.lightGray);
+        jLabel35.setForeground(new java.awt.Color(153, 153, 0));
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("4");
         jLabel35.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -685,7 +685,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel35.setBounds(330, 80, 30, 30);
 
         jLabel36.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel36.setForeground(java.awt.Color.lightGray);
+        jLabel36.setForeground(new java.awt.Color(153, 153, 0));
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel36.setText("5");
         jLabel36.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -694,7 +694,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel36.setBounds(360, 80, 30, 30);
 
         jLabel37.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel37.setForeground(java.awt.Color.lightGray);
+        jLabel37.setForeground(new java.awt.Color(153, 153, 0));
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel37.setText("6");
         jLabel37.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -703,7 +703,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel37.setBounds(390, 80, 30, 30);
 
         jLabel38.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel38.setForeground(java.awt.Color.lightGray);
+        jLabel38.setForeground(new java.awt.Color(153, 153, 0));
         jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel38.setText("7");
         jLabel38.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -712,7 +712,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel38.setBounds(420, 80, 30, 30);
 
         jLabel39.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel39.setForeground(java.awt.Color.lightGray);
+        jLabel39.setForeground(new java.awt.Color(153, 153, 0));
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel39.setText("8");
         jLabel39.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -721,7 +721,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel39.setBounds(450, 80, 30, 30);
 
         jLabel40.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel40.setForeground(java.awt.Color.lightGray);
+        jLabel40.setForeground(new java.awt.Color(153, 153, 0));
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel40.setText("9");
         jLabel40.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -730,7 +730,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel40.setBounds(480, 80, 30, 30);
 
         jLabel41.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel41.setForeground(java.awt.Color.lightGray);
+        jLabel41.setForeground(new java.awt.Color(153, 153, 0));
         jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel41.setText("10");
         jLabel41.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -739,7 +739,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel41.setBounds(510, 80, 30, 30);
 
         jLabel42.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel42.setForeground(java.awt.Color.lightGray);
+        jLabel42.setForeground(new java.awt.Color(153, 153, 0));
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel42.setText("11");
         jLabel42.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -748,7 +748,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel42.setBounds(540, 80, 30, 30);
 
         jLabel43.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel43.setForeground(java.awt.Color.lightGray);
+        jLabel43.setForeground(new java.awt.Color(153, 153, 0));
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("12");
         jLabel43.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -757,7 +757,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel43.setBounds(570, 80, 30, 30);
 
         jLabel44.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel44.setForeground(java.awt.Color.lightGray);
+        jLabel44.setForeground(new java.awt.Color(153, 153, 0));
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("13");
         jLabel44.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -766,7 +766,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel44.setBounds(600, 80, 30, 30);
 
         jLabel45.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel45.setForeground(java.awt.Color.lightGray);
+        jLabel45.setForeground(new java.awt.Color(153, 153, 0));
         jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel45.setText("14");
         jLabel45.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -775,7 +775,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel45.setBounds(630, 80, 30, 30);
 
         jLabel46.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel46.setForeground(java.awt.Color.lightGray);
+        jLabel46.setForeground(new java.awt.Color(153, 153, 0));
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel46.setText("0");
         jLabel46.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -784,7 +784,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel46.setBounds(810, 80, 30, 30);
 
         jLabel47.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel47.setForeground(java.awt.Color.lightGray);
+        jLabel47.setForeground(new java.awt.Color(153, 153, 0));
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel47.setText("1");
         jLabel47.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -793,7 +793,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel47.setBounds(840, 80, 30, 30);
 
         jLabel48.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel48.setForeground(java.awt.Color.lightGray);
+        jLabel48.setForeground(new java.awt.Color(153, 153, 0));
         jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel48.setText("2");
         jLabel48.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -802,7 +802,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel48.setBounds(870, 80, 30, 30);
 
         jLabel49.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel49.setForeground(java.awt.Color.lightGray);
+        jLabel49.setForeground(new java.awt.Color(153, 153, 0));
         jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel49.setText("3");
         jLabel49.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -811,7 +811,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel49.setBounds(900, 80, 30, 30);
 
         jLabel50.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel50.setForeground(java.awt.Color.lightGray);
+        jLabel50.setForeground(new java.awt.Color(153, 153, 0));
         jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel50.setText("4");
         jLabel50.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -820,7 +820,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel50.setBounds(930, 80, 30, 30);
 
         jLabel51.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel51.setForeground(java.awt.Color.lightGray);
+        jLabel51.setForeground(new java.awt.Color(153, 153, 0));
         jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel51.setText("5");
         jLabel51.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -829,7 +829,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel51.setBounds(960, 80, 30, 30);
 
         jLabel52.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel52.setForeground(java.awt.Color.lightGray);
+        jLabel52.setForeground(new java.awt.Color(153, 153, 0));
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel52.setText("7");
         jLabel52.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -838,7 +838,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel52.setBounds(1020, 80, 30, 30);
 
         jLabel53.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel53.setForeground(java.awt.Color.lightGray);
+        jLabel53.setForeground(new java.awt.Color(153, 153, 0));
         jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel53.setText("6");
         jLabel53.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -847,7 +847,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel53.setBounds(990, 80, 30, 30);
 
         jLabel54.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel54.setForeground(java.awt.Color.lightGray);
+        jLabel54.setForeground(new java.awt.Color(153, 153, 0));
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel54.setText("8");
         jLabel54.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -856,7 +856,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel54.setBounds(1050, 80, 30, 30);
 
         jLabel55.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel55.setForeground(java.awt.Color.lightGray);
+        jLabel55.setForeground(new java.awt.Color(153, 153, 0));
         jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel55.setText("9");
         jLabel55.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -865,7 +865,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel55.setBounds(1080, 80, 30, 30);
 
         jLabel56.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel56.setForeground(java.awt.Color.lightGray);
+        jLabel56.setForeground(new java.awt.Color(153, 153, 0));
         jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel56.setText("10");
         jLabel56.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -874,7 +874,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel56.setBounds(1110, 80, 30, 30);
 
         jLabel57.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel57.setForeground(java.awt.Color.lightGray);
+        jLabel57.setForeground(new java.awt.Color(153, 153, 0));
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel57.setText("11");
         jLabel57.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -883,7 +883,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel57.setBounds(1140, 80, 30, 30);
 
         jLabel58.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel58.setForeground(java.awt.Color.lightGray);
+        jLabel58.setForeground(new java.awt.Color(153, 153, 0));
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel58.setText("12");
         jLabel58.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -892,7 +892,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel58.setBounds(1170, 80, 30, 30);
 
         jLabel59.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel59.setForeground(java.awt.Color.lightGray);
+        jLabel59.setForeground(new java.awt.Color(153, 153, 0));
         jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel59.setText("13");
         jLabel59.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -901,7 +901,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         jLabel59.setBounds(1200, 80, 30, 30);
 
         jLabel60.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel60.setForeground(java.awt.Color.lightGray);
+        jLabel60.setForeground(new java.awt.Color(153, 153, 0));
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel60.setText("14");
         jLabel60.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
@@ -943,6 +943,7 @@ public class PantallaCliente extends javax.swing.JFrame {
         getContentPane().add(jPanelEnemigos);
         jPanelEnemigos.setBounds(810, 110, 450, 450);
 
+        lblfondo.setForeground(new java.awt.Color(153, 153, 0));
         lblfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ClientFondo.jpg"))); // NOI18N
         lblfondo.setMaximumSize(new java.awt.Dimension(1345, 817));
         lblfondo.setMinimumSize(new java.awt.Dimension(1345, 817));

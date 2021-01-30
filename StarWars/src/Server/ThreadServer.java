@@ -217,7 +217,7 @@ public class ThreadServer extends Thread {
                                xC = Integer.parseInt(comandos[8]);
                                yC = Integer.parseInt(comandos[10]);
                                
-                               Mercado market = new Mercado("conector", 1, jugadorTmp);
+                               Mercado market = new Mercado("mercado", 1, jugadorTmp);
                                jugadorTmp.tablero[y][x].componente = market;
                                jugadorTmp.tablero[y][x+1].componente = market;
                                jugadorTmp.tablero[y][x].ID = 3;
@@ -319,6 +319,7 @@ public class ThreadServer extends Thread {
                                 
                             }
                             jugadorTmp.setVisibilidad();
+                            jugadorTmp.setRevisados();
                             updateMatrizClientePropia();
                             updateDinero();
                         }         
@@ -394,7 +395,9 @@ public class ThreadServer extends Thread {
                                         mandarConsola("No tienes suficientes comboshots para atacar!");
                                 }
                             jugadorTarget.setVisibilidad();
+                            jugadorTarget.setRevisados();
                             jugadorTmp.setVisibilidad();
+                            jugadorTmp.setRevisados();
                             updateMatrizClientePropia();
                             updateDinero();  
                             pasarTurno();
