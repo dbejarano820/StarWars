@@ -108,6 +108,12 @@ public class ThreadPlayer extends Thread {
             
                     break;
                     
+                    case 7: //caso para venderle algo a otro jugador
+                        
+                        String messageTrade = reader.readUTF();
+                        refPantalla.addConsolaPropia(messageTrade);                      
+                    break;
+                    
                     }
                 } catch (IOException ex) {
                         
