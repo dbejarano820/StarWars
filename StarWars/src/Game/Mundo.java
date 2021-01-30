@@ -126,7 +126,7 @@ public class Mundo extends Componentes {
 
     @Override
     public void conectar(Componentes componente){
-        if(componente.getClass().getSimpleName().equals("Conector")){
+        if(componente != null && componente.getClass().getSimpleName().equals("Conector")){
             this.conexiones.add(componente);
             componente.conexiones.add(this);
         }

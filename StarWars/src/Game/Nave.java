@@ -13,7 +13,7 @@ public class Nave extends Thread{
     
     public static String revelar(Player victima,int x,int y){
         String res = "La nave visito la casilla ("+x+","+y+") del jugador "+victima.nombre+" y revelo un radio de 3 casillas";
-        for()
+        
         
         return res;
     }
