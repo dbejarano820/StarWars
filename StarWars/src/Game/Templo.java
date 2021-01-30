@@ -84,6 +84,7 @@ public class Templo extends Componentes{
     @Override
     public int conectado() {
         int res = 1;
+        
         if(revisado){
             return 1;
         }
@@ -141,7 +142,7 @@ public class Templo extends Componentes{
     @Override
     public String morir(Player atacante) {
         this.running = false;
-        return "El jugador "+atacante.nombre + " destruyo un templo de "+ this.owner.nombre;
+        return "El jugador "+atacante.nombre + " destruyo un templo de "+ this.owner.nombre+"\n";
 
     }
     
