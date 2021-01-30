@@ -155,6 +155,8 @@ public class ThreadServer extends Thread {
                    case 1: //caso para agregar jugador a la lista
                        nombre = reader.readUTF();
                        server.players.add(new Player(nombre, server));
+                       server.buscarPlayer(nombre).generateBlackHole();
+                       updateMatrizClientePropia();
                        updateDinero();
                        //add player to list of players del server           
                    break;
@@ -207,7 +209,7 @@ public class ThreadServer extends Thread {
                                updateMatrizClientePropia();                              
                                break;
                            }
-                           else if(comandos[1].equals("market")){
+                           else if(comandos[1].equals("mercado")){
                                x = Integer.parseInt(comandos[3]);
                                y = Integer.parseInt(comandos[5]);
                                xC = Integer.parseInt(comandos[8]);
@@ -215,7 +217,9 @@ public class ThreadServer extends Thread {
                                
                                Mercado market = new Mercado("conector", 1, jugadorTmp);
                                jugadorTmp.tablero[y][x].componente = market;
+                               jugadorTmp.tablero[y][x+1].componente = market;
                                jugadorTmp.tablero[y][x].ID = 3;
+                               jugadorTmp.tablero[y][x+1].ID = 3;
                                market.conectar(jugadorTmp.tablero[yC][xC].componente);
                                mandarConsola("Colocaste tu mercado inicial con exito!\n");
                                marketInicio = true;
@@ -253,7 +257,7 @@ public class ThreadServer extends Thread {
                         }                           
                            
                        }
-                       else if(comandos[0].equals("market")){
+                       else if(comandos[0].equals("mercado")){
                            
                        }
                         else if(comandos[0].equals("buy")){   //
