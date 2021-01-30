@@ -131,7 +131,7 @@ public class Player {
         return res;
     }
     
-    public void comprarEstructura(String estructura, int x,int y, String direccion, int xC, int yC, String tipoArma){
+    public String comprarEstructura(String estructura, int x,int y, String direccion, int xC, int yC, String tipoArma){
         //Mundo
         if(estructura.equals("mundo") && Dinero > 12000){
             
@@ -149,8 +149,9 @@ public class Player {
                 tablero[y][x+1].componente = mundo;
                 tablero[y+1][x+1].componente = mundo;
                 mundo.conectar(tablero[yC][xC].componente);
-                
-            }       
+                return "Ha adquirido un mundo";
+            }
+            return "No hay espacio suficiente";
         }
         //Mina
         else if(estructura.equals("mina") && Dinero > 1000){
@@ -164,7 +165,9 @@ public class Player {
                     tablero[y+1][x].componente = mina;
                     mina.conectar(tablero[yC][xC].componente);
                     mina.start();
+                    return "Ha adquirido una mina";
                 }
+                return "No hay espacio suficiente";
             }
             else{
                 if(tablero[y][x].ID == 0 && tablero[y][x+1].ID == 0){
@@ -176,7 +179,9 @@ public class Player {
                     tablero[y][x+1].componente = mina;
                     mina.conectar(tablero[yC][xC].componente);
                     mina.start();
+                    return "Ha adquirido una mina";
                 }
+                return "No hay espacio suficiente";
             }
         }
         //Armeria
@@ -191,7 +196,9 @@ public class Player {
                     tablero[y][x].componente = armeria;
                     tablero[y+1][x].componente = armeria;
                     armeria.conectar(tablero[yC][xC].componente);
+                    return "Ha adquirido una armeria";
                 }
+                return "No hay espacio suficiente";
             }
             else{
                 if(tablero[y][x].ID == 0 && tablero[y][x+1].ID == 0){
@@ -202,7 +209,9 @@ public class Player {
                     tablero[y][x].componente = armeria;
                     tablero[y][x+1].componente = armeria;
                     armeria.conectar(tablero[yC][xC].componente);
+                    return "Ha adquirido una armeria";
                 }
+                return "No hay espacio suficiente";
             }  
         }
         //Mercado
@@ -217,7 +226,9 @@ public class Player {
                     tablero[y][x].componente = mercado;
                     tablero[y+1][x].componente = mercado;
                     mercado.conectar(tablero[yC][xC].componente);
+                    return "Ha adquirido un mercado";
                 }
+                return "No hay espacio suficiente";
             }
             else{
                 if(tablero[y][x].ID == 0 && tablero[y][x+1].ID == 0){
@@ -228,7 +239,9 @@ public class Player {
                     tablero[y][x].componente = mercado;
                     tablero[y][x+1].componente = mercado;
                     mercado.conectar(tablero[yC][xC].componente);
+                    return "Ha adquirido un mercado";
                 }
+                return "No hay espacio suficiente";
             }
         }
         //Templo
@@ -243,7 +256,9 @@ public class Player {
                     tablero[y+1][x].componente = templo;
                     templo.conectar(tablero[yC][xC].componente);
                     templo.start();
+                    return "Ha adquirido un templo";
                 }
+                return "No hay espacio suficiente";
             }
             else{
                 if(tablero[y][x].ID == 0 && tablero[y][x+1].ID == 0){
@@ -255,7 +270,9 @@ public class Player {
                     tablero[y][x+1].componente = templo;
                     templo.conectar(tablero[yC][xC].componente);
                     templo.start();
+                    return "Ha adquirido un templo";
                 }
+                return "No hay espacio suficiente";
             } 
         }
         //Conector
@@ -266,9 +283,12 @@ public class Player {
                 Conector conector = new Conector("Conector",1,this);
                 tablero[y][x].componente = conector;
                 conector.conectar(tablero[yC][xC].componente);
+                return "Ha adquirido un conector";
             }
+            return "No hay espacio suficiente";
             
         }
+        return "No se pudo realizar la compra";
     }
     
     public void setRevisados(){
