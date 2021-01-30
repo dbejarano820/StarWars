@@ -6,6 +6,7 @@
 package Game;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -18,18 +19,20 @@ public class HoyoNegro extends Componentes{
         this.conexiones = new ArrayList<Componentes>();
     }
 
-    
 
-    
-
-    
-
-    
     
     public String retornarAtaque(Player atacante){
-        String res = "";
+        String res = "Por haber atacado a un agujero negro: \n";
+        int x;
+        int y;
         
+        for(int i = 0; i <3;i++){
+            x = new Random().nextInt(15);
+            y = new Random().nextInt(15);
+            res += Misil.atacar(atacante, atacante, x, y);
+        }
         
+        res+= "Fin del efecto del agujero negro \n";
         
         return res;
     }

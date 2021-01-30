@@ -27,6 +27,10 @@ public class MultiShot {
                     victima.tablero[y][x].componente.vida -= 1;
                     victima.tablero[y][x].explotado = 1;
                     res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima del MultiShot enviado por "+atacante.nombre+"\n";
+                    if(victima.tablero[y][x].componente.vida == 0){
+                        res += victima.tablero[y][x].componente.morir(atacante);
+                        res += victima.tablero[y][x].componente.explotar();
+                    }
                 }
                 for(int i = 0; i < 4; i++){
                     int x1 = new Random().nextInt(15);
@@ -41,6 +45,11 @@ public class MultiShot {
                                 victima.tablero[y1][x1].componente.vida -= 1;
                                 victima.tablero[y1][x1].explotado = 1;
                                 res += "La casilla ("+x1+","+y1+") de "+victima.nombre+" fue victima de las secuelas del MultiShot enviado por "+atacante.nombre+"\n";
+                                
+                                if(victima.tablero[y][x].componente.vida == 0){
+                                    res += victima.tablero[y][x].componente.morir(atacante);
+                                    res += victima.tablero[y][x].componente.explotar();
+                                }
                             }
                         }
                         else{

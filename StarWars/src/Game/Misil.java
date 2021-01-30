@@ -25,6 +25,11 @@ public class Misil {
                     victima.tablero[y][x].componente.vida -= 1;
                     victima.tablero[y][x].explotado = 1;
                     res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima del misil enviado por "+atacante.nombre+"\n";
+                    
+                    if(victima.tablero[y][x].componente.vida == 0){
+                        res += victima.tablero[y][x].componente.morir(atacante);
+                        res += victima.tablero[y][x].componente.explotar();
+                    }
                 }
             }
             else{

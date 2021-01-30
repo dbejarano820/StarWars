@@ -28,7 +28,11 @@ public class Bomba {
                     else{
                         victima.tablero[y][x].componente.vida -= 1;
                         victima.tablero[y][x].explotado = 1;
-                        res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima de una bomba enviada por "+atacante.nombre+"\n";  
+                        res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima de una bomba enviada por "+atacante.nombre+"\n";
+                        if(victima.tablero[y][x].componente.vida == 0){
+                            res += victima.tablero[y][x].componente.morir(atacante);
+                            res += victima.tablero[y][x].componente.explotar();
+                        }
                     }
                     
                 }
@@ -51,7 +55,11 @@ public class Bomba {
                         else{
                             victima.tablero[y][x].componente.vida -= 1;
                             victima.tablero[y][x].explotado = 1;
-                            res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima de una bomba enviada por "+atacante.nombre+"\n";  
+                            res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima de una bomba enviada por "+atacante.nombre+"\n";
+                            if(victima.tablero[y][x].componente.vida == 0){
+                                res += victima.tablero[y][x].componente.morir(atacante);
+                                res += victima.tablero[y][x].componente.explotar();
+                            }
                         }
 
                     }
@@ -75,7 +83,11 @@ public class Bomba {
                     else{
                         victima.tablero[y][x].componente.vida -= 1;
                         victima.tablero[y][x].explotado = 1;
-                        res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima de una bomba enviada por "+atacante.nombre+"\n";  
+                        res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima de una bomba enviada por "+atacante.nombre+"\n";
+                        if(victima.tablero[y][x].componente.vida == 0){
+                            res += victima.tablero[y][x].componente.morir(atacante);
+                            res += victima.tablero[y][x].componente.explotar();
+                        }
                     }
 
                 }
@@ -95,7 +107,11 @@ public class Bomba {
                         else{
                             victima.tablero[y][x].componente.vida -= 1;
                             victima.tablero[y][x].explotado = 1;
-                            res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima de una bomba enviada por "+atacante.nombre+"\n";  
+                            res += "La casilla ("+x+","+y+") de "+victima.nombre+" fue victima de una bomba enviada por "+atacante.nombre+"\n";
+                            if(victima.tablero[y][x].componente.vida == 0){
+                                res += victima.tablero[y][x].componente.morir(atacante);
+                                res += victima.tablero[y][x].componente.explotar();
+                            }
                         }
 
                     }
