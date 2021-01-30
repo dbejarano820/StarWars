@@ -185,6 +185,7 @@ public class ThreadServer extends Thread {
                                jugadorTmp.tablero[y+1][x].componente = mundo;
                                jugadorTmp.tablero[y+1][x+1].componente = mundo;                             
                                jugadorTmp.tablero[y][x+1].componente = mundo;
+                               
                                jugadorTmp.tablero[y][x].ID = 1;
                                jugadorTmp.tablero[y+1][x].ID = 1;
                                jugadorTmp.tablero[y+1][x+1].ID = 1;                            
