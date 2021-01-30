@@ -16,6 +16,7 @@ public class Mercado extends Componentes {
     public Mercado(String nombre, int vida, Player owner) {
         super(nombre, vida, owner);
         this.conexiones = new ArrayList<Componentes>();
+        this.revisado = false;
     }
 
     @Override
@@ -76,24 +77,31 @@ public class Mercado extends Componentes {
     @Override
     public int conectado() {
         int res = 0;
+        if(revisado){
+            return 1;
+        }
+        revisado = true;
         
         if(this.vida == 0){
-            return 0;
+            return 1;
         }
         
         for(int i = 0; i < conexiones.size(); i++){
             if(conexiones.get(i).getClass().getSimpleName().equals("Mundo") && conexiones.get(i).vida > 0){
-                return 1;
+                return 0;
             }
         }
         
         for(int i = 0; i < conexiones.size(); i++){
             res = res + conexiones.get(i).conectado();
         }
-        if(res > 0)
-            res = 1;
         
-        return res;
+        if(res == 0)
+            return 1;
+        else{
+            return 0;
+        }
+
     }
     public String comprar(){
         String res = "";

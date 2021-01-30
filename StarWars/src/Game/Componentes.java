@@ -20,6 +20,7 @@ public abstract class Componentes extends Thread{
     public Player owner;
     public int escudo;
     public ArrayList<Componentes> conexiones;
+    public boolean revisado;
     
     
     public Componentes(String nombre, int vida, Player owner){
@@ -27,6 +28,7 @@ public abstract class Componentes extends Thread{
         this.vida = vida;
         this.owner = owner;
         this.conexiones = new ArrayList<Componentes>();
+        this.revisado = false;
     }
     public abstract String explotar();
     public abstract String morir(Player atacante);

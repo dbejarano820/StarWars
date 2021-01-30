@@ -243,5 +243,25 @@ public class Player {
             
         }
     }
+    public void setRevisados(){
+        for(int i = 0; i < tablero.length;i++){
+            for(int j = 0; j < tablero[i].length;j++){
+                if(tablero[i][j].componente != null){
+                   tablero[i][j].componente.revisado = false; 
+                }
+            }
+        }
+    }
     
+    public boolean mercadoDisponible(){
+        for(int i = 0; i < tablero.length;i++){
+            for(int j = 0; j < tablero[i].length;j++){
+                if(tablero[i][j].componente != null){
+                   if(tablero[i][j].componente.getClass().getSimpleName().equals("Mercado") && tablero[i][j].componente.vida > 0)
+                       return true;
+                }
+            }
+        }
+        return false;
+    }
 }
