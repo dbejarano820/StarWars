@@ -461,6 +461,11 @@ public class ThreadServer extends Thread {
                                         mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x10, y10));
                                         jugadorTmp.combo--;
                                     }
+                                    else if(arma.equals("nave")){
+                                        if(jugadorTmp.nave > 0 ){
+                                            mandarConsolaTodas(Nave.revelar(jugadorTarget, x, y));
+                                        }
+                                    }
                                     else
                                         mandarConsola("No tienes suficientes comboshots para atacar!");
                                 }
@@ -596,6 +601,8 @@ public class ThreadServer extends Thread {
             } catch (IOException ex){
                 
              
+            } catch (InterruptedException ex) {
+                Logger.getLogger(ThreadServer.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
     }
