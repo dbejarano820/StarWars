@@ -42,6 +42,7 @@ public class Player {
         multi = 0;
         bombas = 0;
         combo = 0;
+        nave = 0;
     }
 
 
