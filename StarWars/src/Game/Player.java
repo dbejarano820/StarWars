@@ -123,7 +123,9 @@ public class Player {
     public void comprarEstructura(String estructura, int x,int y, String direccion, int xC, int yC, String tipoArma){
         //Mundo
         if(estructura.equals("mundo") && Dinero > 12000){
+            
             if(tablero[y][x].ID == 0 && tablero[y+1][x].ID == 0 && tablero[y][x+1].ID == 0 && tablero[y+1][x+1].ID == 0 ){
+                Dinero -= 12000;
                 
                 tablero[y][x].ID = 1;
                 tablero[y+1][x].ID = 1;
@@ -143,6 +145,7 @@ public class Player {
         else if(estructura.equals("mina") && Dinero > 1000){
             if(direccion.equals("abajo")){
                 if(tablero[y][x].ID == 0 && tablero[y+1][x].ID == 0){
+                    Dinero -= 1000;
                     tablero[y][x].ID = 4;
                     tablero[y+1][x].ID = 4;
                     Mina mina = new Mina(server.velocidadMina,server.cantidadMina,"Mina",2,this);
@@ -153,6 +156,7 @@ public class Player {
             }
             else{
                 if(tablero[y][x].ID == 0 && tablero[y][x+1].ID == 0){
+                    Dinero -= 1000;
                     tablero[y][x].ID = 4;
                     tablero[y][x+1].ID = 4;
                     Mina mina = new Mina(server.velocidadMina,server.cantidadMina,"Mina",2,this);
@@ -167,6 +171,7 @@ public class Player {
             
             if(direccion.equals("abajo")){
                 if(tablero[y][x].ID == 0 && tablero[y+1][x].ID == 0){
+                    Dinero -= 1500;
                     tablero[y][x].ID = 5;
                     tablero[y+1][x].ID = 5;
                     Armeria armeria = new Armeria("Armeria",2,this,tipoArma);
@@ -177,6 +182,7 @@ public class Player {
             }
             else{
                 if(tablero[y][x].ID == 0 && tablero[y][x+1].ID == 0){
+                    Dinero -= 1500;
                     tablero[y][x].ID = 5;
                     tablero[y][x+1].ID = 5;
                     Armeria armeria = new Armeria("Armeria",2,this,tipoArma);
@@ -189,7 +195,9 @@ public class Player {
         //Mercado
         else if(estructura.equals("mercado") && Dinero > 2000){
             if(direccion.equals("abajo")){
+                
                 if(tablero[y][x].ID == 0 && tablero[y+1][x].ID == 0){
+                    Dinero -= 2000;
                     tablero[y][x].ID = 3;
                     tablero[y+1][x].ID = 3;
                     Mercado mercado = new Mercado("Mercado",2,this);
@@ -200,6 +208,7 @@ public class Player {
             }
             else{
                 if(tablero[y][x].ID == 0 && tablero[y][x+1].ID == 0){
+                    Dinero -= 2000;
                     tablero[y][x].ID = 3;
                     tablero[y][x+1].ID = 3;
                     Mercado mercado = new Mercado("Mercado",2,this);
@@ -213,6 +222,7 @@ public class Player {
         else if(estructura.equals("templo") && Dinero > 2500){
             if(direccion.equals("abajo")){
                 if(tablero[y][x].ID == 0 && tablero[y+1][x].ID == 0){
+                    Dinero -= 2500;
                     tablero[y][x].ID = 6;
                     tablero[y+1][x].ID = 6;
                     Templo templo = new Templo("Templo",2,this);
@@ -223,6 +233,7 @@ public class Player {
             }
             else{
                 if(tablero[y][x].ID == 0 && tablero[y][x+1].ID == 0){
+                    Dinero -= 2500;
                     tablero[y][x].ID = 6;
                     tablero[y][x+1].ID = 6;
                     Templo templo = new Templo("Templo",2,this);
@@ -235,6 +246,7 @@ public class Player {
         //Conector
         else if(estructura.equals("conector") && Dinero > 100){
             if(tablero[y][x].ID == 0){
+                Dinero -= 100;
                 tablero[y][x].ID = 2;
                 Conector conector = new Conector("Conector",1,this);
                 tablero[y][x].componente = conector;
@@ -243,6 +255,7 @@ public class Player {
             
         }
     }
+    
     public void setRevisados(){
         for(int i = 0; i < tablero.length;i++){
             for(int j = 0; j < tablero[i].length;j++){
