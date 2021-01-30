@@ -25,7 +25,9 @@ public class ThreadServer extends Thread {
     public String nombre;
     private boolean running = true;
     public Server server;
-    
+    private boolean mundoInicio = false;
+    private boolean conectorInicio = false;
+    private boolean marketInicio = false;
     
     public ThreadServer(Socket socketRef, Server server) throws IOException {
       this.socketRef = socketRef;
@@ -48,14 +50,14 @@ public class ThreadServer extends Thread {
    public void mandarConsola(String msj) throws IOException {
 
         writer.writeInt(2);
-        writer.writeUTF(msj);                  
+        writer.writeUTF(msj + "\n");                  
    }
      public void mandarConsolaTodas(String msj) throws IOException {
 
         for(int i = 0; i < server.conexiones.size(); i++){
             ThreadServer current = server.conexiones.get(i);
             current.writer.writeInt(2);
-            current.writer.writeUTF(msj);                 
+            current.writer.writeUTF(">> " + msj + "\n");                 
                
         }  
    }  
@@ -160,11 +162,11 @@ public class ThreadServer extends Thread {
                    case 2:
                        usuario = reader.readUTF();
                        String comando = reader.readUTF();
-                       String[] comandos = comando.split("-");
-                       
-                       
+                       String[] comandos = comando.split("-");            
+                        jugadorTmp = server.buscarPlayer(usuario);
+                        
                        if(comandos[0].equals("place")){  //comando para crear 1 de 3 heroes
-                           jugadorTmp = server.buscarPlayer(usuario);
+
                            
                            if(jugadorTmp.gameReady){
                                writer.writeInt(2);
@@ -172,7 +174,7 @@ public class ThreadServer extends Thread {
                                break;
                            }
                            
-                           if(comandos[1].equals("mundo")){
+                           if(comandos[1].equals("mundo") && !mundoInicio){
                                x = Integer.parseInt(comandos[3]);
                                y = Integer.parseInt(comandos[5]);
                                
@@ -185,11 +187,12 @@ public class ThreadServer extends Thread {
                                jugadorTmp.tablero[y+1][x].ID = 1;
                                jugadorTmp.tablero[y+1][x+1].ID = 1;                            
                                jugadorTmp.tablero[y][x+1].ID = 1; 
-                               mandarConsola("Colocaste un mundo con exito!\n");
+                               mandarConsola("Colocaste tu mundo inicial con exito!\n");
+                               mundoInicio = true;
                                updateMatrizClientePropia();
                                break;
                            } 
-                           else if(comandos[1].equals("conector")){
+                           else if(comandos[1].equals("conector") && !conectorInicio){
                                x = Integer.parseInt(comandos[3]);
                                y = Integer.parseInt(comandos[5]);
                                xC = Integer.parseInt(comandos[8]);
@@ -200,27 +203,28 @@ public class ThreadServer extends Thread {
                                jugadorTmp.tablero[y][x].ID = 2;
                                conector.conectar(jugadorTmp.tablero[yC][xC].componente);
                                mandarConsola("Colocaste tu conector inicial con exito!\n");
+                               conectorInicio = true;
                                updateMatrizClientePropia();                              
                                break;
                            }
                            else if(comandos[1].equals("market")){
                                x = Integer.parseInt(comandos[3]);
                                y = Integer.parseInt(comandos[5]);
-                               xC = Integer.parseInt(comandos[7]);
-                               yC = Integer.parseInt(comandos[9]);
+                               xC = Integer.parseInt(comandos[8]);
+                               yC = Integer.parseInt(comandos[10]);
                                
                                Mercado market = new Mercado("conector", 1, jugadorTmp);
                                jugadorTmp.tablero[y][x].componente = market;
                                jugadorTmp.tablero[y][x].ID = 3;
                                market.conectar(jugadorTmp.tablero[yC][xC].componente);
                                mandarConsola("Colocaste tu mercado inicial con exito!\n");
+                               marketInicio = true;
                                updateMatrizClientePropia();                              
                                break;                                 
                            }
                            
                        }
-                       
-                        
+
                        else if(comandos[0].equals("skip")){ //comando para saltarse su turno y no atacar
                          
                            if(server.getTurno().equals(usuario)){
@@ -238,7 +242,7 @@ public class ThreadServer extends Thread {
                                writer.writeUTF("ERROR. It is not your turn!"); 
                            }    
                        }
-                       else if(comandos[1].equals("chat")){
+                       else if(comandos[0].equals("chat")){
                            
                         msj = "(Chat) " + usuario + " > "+ comandos[1]; 
 
@@ -249,19 +253,75 @@ public class ThreadServer extends Thread {
                         }                           
                            
                        }
-                       else if(comandos[1].equals("market")){
+                       else if(comandos[0].equals("market")){
                            
                        }
-                        else if(comandos[1].equals("buy")){
+                        else if(comandos[0].equals("buy")){   //
+                            
+                            componente = comandos[1];
+                            x = Integer.parseInt(comandos[3]);
+                            y = Integer.parseInt(comandos[5]);
+                            
+                            if(componente.equals("mundo")){
+                                xC = Integer.parseInt(comandos[8]);
+                                yC = Integer.parseInt(comandos[10]);                            
+                                jugadorTmp.comprarEstructura(componente, x, y, "nada", xC, yC, "nada");
+                            }
+                            else if(componente.equals("conector")){
+                                xC = Integer.parseInt(comandos[8]);
+                                yC = Integer.parseInt(comandos[10]);                            
+                                jugadorTmp.comprarEstructura(componente, x, y, "nada", xC, yC, "nada");                               
+                            }
+                            else if(componente.equals("armeria")){
+                                String arma = comandos[6];
+                                String dirrecion = comandos[7];
+                                xC = Integer.parseInt(comandos[10]);
+                                yC = Integer.parseInt(comandos[12]);
+                                jugadorTmp.comprarEstructura(componente, x, y, dirrecion, xC, yC, arma);
+                            }
+                            else{//buy-componente-x-1-y-1-direccion-conectar-xc-1--yc-1
+                                String dirrecion = comandos[6];
+                                xC = Integer.parseInt(comandos[9]);
+                                yC = Integer.parseInt(comandos[11]);
+                                jugadorTmp.comprarEstructura(componente, x, y, dirrecion, xC, yC, "nada");                               
+                                
+                            }
+                            updateMatrizClientePropia();
+                            updateDinero();
+                                    
+                       }                      
+                        else if(comandos[0].equals("attack")){
+                           
+                            
+                            
+                            
+                            
+                            updateMatrizClientePropia();
+                            updateDinero();
+                       }         
+                        
+                        else if(comandos[0].equals("start")){    //comando para start game
+                           jugadorTmp = server.buscarPlayer(usuario);
+                           if(!mundoInicio || !conectorInicio || !marketInicio){
+                               mandarConsola("ERROR: You haven't place your initial components");
+                           }
+                           else{
+                               jugadorTmp.gameReady = true;     
+                           }
+                           if(server.areAllReady()){
+                               mandarConsolaTodas("The game has officially started!");
+                                for(int i = 0; i < server.conexiones.size(); i++){
+                                    ThreadServer current = server.conexiones.get(i);
+                                    current.writer.writeInt(1);
+                                    current.writer.writeUTF(server.ordenPlayers.get(0).nombre);                 
+                                }
+                           }
+                       } 
+                        
+                        else if(comandos[0].equals("inventory")){
                            
                        }                      
-                        else if(comandos[1].equals("attack")){
-                           
-                       }                      
-                        else if(comandos[1].equals("inventory")){
-                           
-                       }                      
-                        else if(comandos[1].equals("info")){
+                        else if(comandos[0].equals("info")){
                            
                        }    
                         else{ //si no hay ninguna entrada valida
