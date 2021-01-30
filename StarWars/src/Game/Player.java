@@ -56,6 +56,7 @@ public class Player {
     public void setDinero(int dinero){
         this.Dinero = dinero;
     }
+    
     public String comprarArmas(String tipo){
         
         String res = "";
@@ -63,16 +64,20 @@ public class Player {
         for(int i = 0; i < tablero.length;i++){
             for(int j = 0; j< tablero[i].length;j++){
                 
-                if(tablero[i][j].componente.getClass().getSimpleName().equals("Armeria")){
-                    Armeria armeria = (Armeria)tablero[i][j].componente;
-                    if(armeria.tipoArma.equals(tipo))
-                        encontrado = true;
+                if(tablero[i][j].componente != null){
+                    if(tablero[i][j].componente.getClass().getSimpleName().equals("Armeria")){
+                        Armeria armeria = (Armeria)tablero[i][j].componente;
+                        if(armeria.tipoArma.equals(tipo))
+                            encontrado = true;
+                    }
                 }
             }
         }
+        
         if(encontrado){
             if(tipo.equals("misil")){
                 if(Acero > 500){
+                    Acero-=500;
                     misiles++;
                     res+= "El jugador "+nombre+" compró un misil";
                 }
@@ -153,6 +158,7 @@ public class Player {
                     tablero[y][x].componente = mina;
                     tablero[y+1][x].componente = mina;
                     mina.conectar(tablero[yC][xC].componente);
+                    mina.start();
                 }
             }
             else{
@@ -164,6 +170,7 @@ public class Player {
                     tablero[y][x].componente = mina;
                     tablero[y][x+1].componente = mina;
                     mina.conectar(tablero[yC][xC].componente);
+                    mina.start();
                 }
             }
         }
@@ -230,6 +237,7 @@ public class Player {
                     tablero[y][x].componente = templo;
                     tablero[y+1][x].componente = templo;
                     templo.conectar(tablero[yC][xC].componente);
+                    templo.start();
                 }
             }
             else{
@@ -241,6 +249,7 @@ public class Player {
                     tablero[y][x].componente = templo;
                     tablero[y][x+1].componente = templo;
                     templo.conectar(tablero[yC][xC].componente);
+                    templo.start();
                 }
             } 
         }
