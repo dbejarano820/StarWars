@@ -165,7 +165,7 @@ public class ThreadServer extends Thread {
                        usuario = reader.readUTF();
                        String comando = reader.readUTF();
                        String[] comandos = comando.split("-");            
-                        jugadorTmp = server.buscarPlayer(usuario);
+                       jugadorTmp = server.buscarPlayer(usuario);
                         
                        if(comandos[0].equals("place")){  //comando para crear 1 de 3 heroes
 
@@ -246,7 +246,7 @@ public class ThreadServer extends Thread {
                                writer.writeUTF("ERROR. It is not your turn!"); 
                            }    
                        }
-                       else if(comandos[0].equals("chat")){
+                        else if(comandos[0].equals("chat")){
                            
                         msj = "(Chat) " + usuario + " > "+ comandos[1]; 
 
@@ -257,11 +257,36 @@ public class ThreadServer extends Thread {
                         }                           
                            
                        }
-                       else if(comandos[0].equals("mercado")){
+                        else if(comandos[0].equals("mercado")){
+   
+                           if(jugadorTmp.mercadoDisponible()){
+             
+                              String mercadoDecision = comandos[1];
+                           
+                              if(mercadoDecision.equals("vender")){
+                               
+                                if(comandos[2].equals("tienda")){
+                                   
+                                   //vender a tienda , armas u acero
+                                   
+                               }
+                                else{
+                                   Player jugadorTmp2 = server.buscarPlayer(comandos[2]);
+                                   
+                                   //vender a player, armas u acero
+                                }          
+                           }
+                              else if(mercadoDecision.equals("comprar")){
+                                  
+                                  //comrpar arma u acero
+                                  
+                                  
+                              }
+                        }
                            
                        }
                         else if(comandos[0].equals("buy")){   //
-                            
+                        if(server.getTurno().equals(usuario)){  
                             componente = comandos[1];
                             x = Integer.parseInt(comandos[3]);
                             y = Integer.parseInt(comandos[5]);
@@ -292,16 +317,22 @@ public class ThreadServer extends Thread {
                             }
                             updateMatrizClientePropia();
                             updateDinero();
-                                    
+                        }         
                        }                      
                         else if(comandos[0].equals("attack")){
-                           
                             
-                            
-                            
-                            
+                            if(server.getTurno().equals(usuario)){
+                                Player jugadorTarget = server.buscarPlayer(comandos[1]);
+                                String arma = comandos[2];
+                                x = Integer.parseInt(comandos[4]);
+                                y = Integer.parseInt(comandos[6]);
+                                
+                                //atacar al jugador tmp
+                         
                             updateMatrizClientePropia();
-                            updateDinero();
+                            updateDinero();                             
+                                
+                            }          
                        }         
                         
                         else if(comandos[0].equals("start")){    //comando para start game
@@ -323,10 +354,23 @@ public class ThreadServer extends Thread {
                        } 
                         
                         else if(comandos[0].equals("inventory")){
-                           
+                           String inventory = "";
+                           inventory += "   Armas en bodega: \n Misiles: " + jugadorTmp.misiles + "\n Multishots: " + jugadorTmp.multi + "\n Bombas: " + jugadorTmp.bombas
+                                   + "\n Comboshots:" + jugadorTmp.combo;  
+                            
+                           mandarConsola(inventory);
                        }                      
                         else if(comandos[0].equals("info")){
-                           
+                            String res = "";
+                            if(comandos[1].equals("componentes")){
+                               //res += precios de los comoponentes
+                            }
+                            else if(comandos[1].equals("armario")){
+                                // precios de cada arma
+                            }   
+                            else if(comandos[1].equals("mercado")){
+                                //precio para vender y comprar del mercado
+                            }                             
                        }    
                         else{ //si no hay ninguna entrada valida
                            writer.writeInt(2);
