@@ -357,10 +357,36 @@ public class ThreadServer extends Thread {
                                 }
                                 else if(arma.equals("comboshot")){
                                     if(jugadorTmp.combo > 0){
-                                       // int 
-                                //    mandarConsolaTodas(ComboShot.atacar(jugadorTmp, jugadorTarget, x, y));
+                                        int x2 = Integer.parseInt(comandos[8]);
+                                        int y2 = Integer.parseInt(comandos[10]);
+                                        int x3 = Integer.parseInt(comandos[12]);
+                                        int y3 = Integer.parseInt(comandos[14]);
+                                        int x4 = Integer.parseInt(comandos[16]);
+                                        int y4 = Integer.parseInt(comandos[18]);
+                                        int x5 = Integer.parseInt(comandos[20]);
+                                        int y5 = Integer.parseInt(comandos[22]);
+                                        int x6 = Integer.parseInt(comandos[24]);
+                                        int y6 = Integer.parseInt(comandos[26]);
+                                        int x7 = Integer.parseInt(comandos[28]);
+                                        int y7 = Integer.parseInt(comandos[30]);
+                                        int x8 = Integer.parseInt(comandos[32]);
+                                        int y8 = Integer.parseInt(comandos[34]);
+                                        int x9 = Integer.parseInt(comandos[36]);
+                                        int y9 = Integer.parseInt(comandos[38]);
+                                        int x10 = Integer.parseInt(comandos[40]);
+                                        int y10 = Integer.parseInt(comandos[42]);
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x, y));
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x2, y2));
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x3, y3));
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x4, y4));
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x5, y5));
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x6, y6));
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x7, y7));
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x8, y8));
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x9, y9));
+                                        mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x10, y10));
                                     }
-                                  //  else
+                                    else
                                         mandarConsola("No tienes suficientes comboshots para atacar!");
                                 }
                             updateMatrizClientePropia();
