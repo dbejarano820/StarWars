@@ -294,6 +294,7 @@ public class Player {
                 if(tablero[i][j].componente != null){
                     tablero[i][j].visible = tablero[i][j].componente.conectado();
                     System.out.println(nombre + "   "+tablero[i][j].visible + "  aca es la casilla : " + j+ ","+i + "---" + tablero[i][j].componente.conexiones.size());
+                    setRevisados();
                 }
             }
         }
