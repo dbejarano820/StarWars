@@ -26,6 +26,7 @@ public class Server {
      public int setAmountPlayers;
      private boolean running = true;
      private ServerSocket srv;
+     public int next = 0;
      private int turno = 0;
      private boolean gameStarted = false;
      public boolean allPlayersReady = false;
@@ -67,6 +68,9 @@ public class Server {
         }
         return null;
     }
+    
+    
+    
     
     public void generateOrder(){
         
@@ -113,6 +117,14 @@ public class Server {
         return ordenPlayers.get(turno).nombre;
     }
 
+    public String getNextName(){
+        if(++next >= players.size())
+            next = 0;
+        
+        return players.get(next).nombre;
+        
+    }
+    
     public void runServer(){
         contadorDeConexiones = 0;
         try{

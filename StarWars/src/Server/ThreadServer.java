@@ -43,7 +43,66 @@ public class ThreadServer extends Thread {
       current.writer.writeUTF(nextTurn);                 
      }           
    }
+   
+    public void pintarNext(String player) throws IOException {
+       
+    for(int i = 0; i < server.conexiones.size(); i++){
+      ThreadServer current = server.conexiones.get(i);
+      current.writer.writeInt(5);
+      current.writer.writeUTF(player);                 
+     }           
+   }
+   
     
+   
+   public void updateMatrizClientePropia() throws IOException{
+       
+     for(int i = 0; i < server.conexiones.size(); i++){
+            ThreadServer current = server.conexiones.get(i);
+            
+            if(current.nombre.equals(server.players.get(i).nombre)){      
+                current.writer.writeInt(3);
+                
+                
+                  for(int row = 0; row < server.players.get(i).tablero.length; row++)
+                    for(int col = 0; col < server.players.get(i).tablero[row].length; col++){
+                        
+                        current.writer.writeInt(server.players.get(i).tablero[row][col].ID);
+                        current.writer.writeInt(server.players.get(i).tablero[row][col].ID);
+                        current.writer.writeInt(server.players.get(i).tablero[row][col].ID);
+                        current.writer.writeInt(server.players.get(i).tablero[row][col].ID);
+                    }              
+            }   
+     }  
+   }
+   
+   
+   public void updateMatrizClienteEnemigo(String msj) throws IOException {
+       
+     Player playerTmp = server.buscarPlayer(msj);
+       
+     for(int i = 0; i < server.conexiones.size(); i++){
+            ThreadServer current = server.conexiones.get(i);
+            
+            if(current.nombre.equals(server.players.get(i).nombre)){      
+                current.writer.writeInt(4);            
+                
+                  for(int row = 0; row < server.players.get(i).tablero.length; row++)
+                    for(int col = 0; col < server.players.get(i).tablero[row].length; col++){
+                        
+                        current.writer.writeInt(playerTmp.tablero[row][col].ID);
+                        current.writer.writeInt(playerTmp.tablero[row][col].ID);
+                        current.writer.writeInt(playerTmp.tablero[row][col].ID);
+                        current.writer.writeInt(playerTmp.tablero[row][col].ID);
+                    }              
+            }   
+     }        
+       
+       
+       
+   }
+   
+   
    
     public void run(){
         
@@ -88,6 +147,32 @@ public class ThreadServer extends Thread {
                                break;
                            }
                        }
+                       else if(comandos[1].equals("market")){
+                           
+                       }
+                       
+                       
+                       
+                       
+                   break;
+                   
+                   case 3:
+                       String enemigoDeseado = reader.readUTF();
+                       updateMatrizClienteEnemigo(enemigoDeseado);
+                      
+                   break;
+                   
+                   case 4:
+                       String next = server.getNextName();
+                       if(!nombre.equals(next)){
+                           pintarNext(next);
+                       }
+                       else{
+                           String next1 = server.getNextName();
+                           pintarNext(next);
+                       }
+                   break;
+                   
                }               
             } catch (IOException ex){
                 

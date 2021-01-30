@@ -50,6 +50,19 @@ public class PantallaCliente extends javax.swing.JFrame {
         lblPlayerTurno.setText(player);
     }
     
+    public void pintarNextEnemy(String player){
+        lblPlayerEnemyName.setText(player);
+    }
+    
+    public void addConsolaPropia(String msj){
+        txtAreaConsola.append(msj);
+    }
+    
+    public void addConsolaGlobal(String msj){
+        txtAreaConsola.append(msj);
+    }
+    
+    
     public void generarTableroPropio(){
         
         lblPlayerName.setText(refCliente.nombre);
@@ -152,47 +165,8 @@ public class PantallaCliente extends javax.swing.JFrame {
             }                       
     }       
       
-  /*  
-     public void colorMatriz(){
-        
-        for(int row = 0; row < refCliente.tableroCliente.length; row++)
-            for(int col = 0; col < refCliente.tableroCliente[row].length; col++){
-                
-                if(refCliente.tableroCliente[row][col].heroOwner.equals(lblHero1Name.getText()))
-                    refCliente.tableroCliente[row][col].refLabel.setBackground(Color.cyan); 
-                else if(refCliente.tableroCliente[row][col].heroOwner.equals(lblHero2Name.getText()))
-                    refCliente.tableroCliente[row][col].refLabel.setBackground(Color.orange);
-                else if(refCliente.tableroCliente[row][col].heroOwner.equals(lblHero3Name.getText()))
-                    refCliente.tableroCliente[row][col].refLabel.setBackground(Color.gray);      
-            }  
-    }
-    
-    
-    public void mostrarVivas(){
-        
-        for(int row = 0; row < refCliente.tableroCliente.length; row++)
-            for(int col = 0; col < refCliente.tableroCliente[row].length; col++)
-                if(refCliente.tableroCliente[row][col].vida == 0 && !refCliente.tableroCliente[row][col].activeVolcano && !refCliente.tableroCliente[row][col].activeWhirlpool)
-                    refCliente.tableroCliente[row][col].refLabel.setText("X");
-    }
-    
-    
-    
-    public void mostrarVolcanesRemolinos(String pathVolcan, String pathWhirlpool){
-        
-        for(int row = 0; row < refCliente.tableroCliente.length; row++)
-            for(int col = 0; col < refCliente.tableroCliente[row].length; col++){
-                
-                 if(refCliente.tableroCliente[row][col].activeVolcano){
-                     refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathVolcan).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
-                 }
-                 else if(refCliente.tableroCliente[row][col].activeWhirlpool){
-                     refCliente.tableroCliente[row][col].refLabel.setIcon(new ImageIcon(new ImageIcon(pathWhirlpool).getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
-                 }
-            }
-    }   
- */
-    
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -202,6 +176,7 @@ public class PantallaCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnRefreshEnemy = new javax.swing.JButton();
         btnNextPlayer = new javax.swing.JButton();
         txtAreaConsola = new java.awt.TextArea();
         txtFieldConsola = new java.awt.TextField();
@@ -223,7 +198,21 @@ public class PantallaCliente extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1444, 950));
         getContentPane().setLayout(null);
 
+        btnRefreshEnemy.setText("Refresh");
+        btnRefreshEnemy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefreshEnemyActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRefreshEnemy);
+        btnRefreshEnemy.setBounds(1250, 50, 90, 40);
+
         btnNextPlayer.setText("Next");
+        btnNextPlayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNextPlayerActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnNextPlayer);
         btnNextPlayer.setBounds(1150, 50, 90, 40);
         getContentPane().add(txtAreaConsola);
@@ -348,6 +337,25 @@ public class PantallaCliente extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnRefreshEnemyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshEnemyActionPerformed
+        
+       try{ 
+       refCliente.hiloPlayer.writer.writeInt(3);
+       refCliente.hiloPlayer.writer.writeUTF(lblPlayerEnemyName.getText());
+       
+       } catch (IOException ex){
+           
+       }
+        
+    }//GEN-LAST:event_btnRefreshEnemyActionPerformed
+
+    private void btnNextPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextPlayerActionPerformed
+        
+        refCliente.
+        
+        
+    }//GEN-LAST:event_btnNextPlayerActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -385,6 +393,7 @@ public class PantallaCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnNextPlayer;
+    private javax.swing.JButton btnRefreshEnemy;
     private javax.swing.JButton btnSend;
     private javax.swing.JPanel jPanelEnemigos;
     private javax.swing.JPanel jPanelPropio;
