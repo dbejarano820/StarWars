@@ -573,11 +573,11 @@ public class ThreadServer extends Thread {
                         else if(comandos[0].equals("info")){
                             String res = "";
                             if(comandos[1].equals("componentes")){
-                               res += "\n    Precios de componentes:\n Mundo: $12000\n Conector: $100\n Mercado: $2000\n Mina: $1000\n Armeria: $1500\n Templo: $2500\n"; 
+                               res += "\n\n    Precios de componentes:\n Mundo: $12000\n Conector: $100\n Mercado: $2000\n Mina: $1000\n Armeria: $1500\n Templo: $2500\n"; 
                                 mandarConsola(res);
                             }
                             else if(comandos[1].equals("armeria")){
-                               res += "\n    Precios de armas disponibles:\n Misil: 500kg acero\n Multi-shot: 1000kg acero\n Bomba: 2000kg acero\n Combo-shot: 5000kg acero";
+                               res += "\n \n   Precios de armas disponibles:\n Misil: 500kg acero\n Multi-shot: 1000kg acero\n Bomba: 2000kg acero\n Combo-shot: 5000kg acero";
                                 mandarConsola(res);
                             }   
                             else if(comandos[1].equals("mercado")){
