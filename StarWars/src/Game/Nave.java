@@ -21,10 +21,11 @@ public class Nave extends Thread{
     Player victima;
     ThreadServer hilo;
 
-    public Nave(int x, int y, Player victima) {
+    public Nave(int x, int y, Player victima, ThreadServer hilo) {
         this.x = x;
         this.y = y;
         this.victima = victima;
+        this.hilo = hilo;
     }
     
     

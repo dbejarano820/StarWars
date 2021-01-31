@@ -476,7 +476,10 @@ public class ThreadServer extends Thread {
                                     }   
                                     else if(arma.equals("nave")){
                                         if(jugadorTmp.nave > 0 ){
-                                            mandarConsolaTodas(Nave.revelar(jugadorTarget, x, y));
+                                            Nave nave = new Nave(x,y,jugadorTarget,this);
+                                            nave.start();
+                                            
+                                            //mandarConsolaTodas(Nave.revelar(jugadorTarget, x, y));
                                             jugadorTmp.nave--;
                                             System.out.println("terminó el comando de la nave");
                                         }
@@ -613,8 +616,6 @@ public class ThreadServer extends Thread {
             } catch (IOException ex){
                 
              
-            } catch (InterruptedException ex) {
-                Logger.getLogger(ThreadServer.class.getName()).log(Level.SEVERE, null, ex);
             }
         } 
     }
