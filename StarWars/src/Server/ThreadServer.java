@@ -581,7 +581,7 @@ public class ThreadServer extends Thread {
                                 mandarConsola(res);
                             }   
                             else if(comandos[1].equals("mercado")){
-                                res += "\n    Precios fijos del mercado: \n\n  El mercado de te compra:\n 1000kg acero se compra por $1000 \n 1 misil se compra por $400\n 1 Multishot se compra por $900\n 1 Bomba se compra por $1900\n 1 Comboshot se compra por $4900\n\n"
+                                res += "\n    Precios fijos del mercado: \n\n  El mercado te compra:\n 1000kg acero se compra por $1000 \n 1 misil se compra por $400\n 1 Multishot se compra por $900\n 1 Bomba se compra por $1900\n 1 Comboshot se compra por $4900\n\n"
                                         + "  El mercado te vende:\n 1000kg de acero por $1000\n 1 Misil por $500\n 1 Multishot por $1000\n 1 Bomba por $2000\n 1 Comboshot por $5000\n 1 Nave por $2500";
                                 mandarConsola(res);
                             }                             
