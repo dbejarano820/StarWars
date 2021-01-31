@@ -304,6 +304,10 @@ public class ThreadServer extends Thread {
                                    server.tradePrice = Integer.parseInt(comandos[5]);
                                    server.tradeOwner = jugadorTmp;
                                    
+                                   if(!jugadorTmp2.mercadoDisponible()){
+                                       mandarConsola(jugadorTmp2.nombre + " no posee un mercado!");
+                                       break;
+                                   }
                                    for(int i = 0; i < server.conexiones.size(); i++){
                                        if(server.conexiones.get(i).nombre.equals(jugadorTmp2.nombre)){
                                            ThreadServer current = server.conexiones.get(i);
@@ -467,14 +471,16 @@ public class ThreadServer extends Thread {
                                         mandarConsolaTodas(Misil.atacar(jugadorTmp, jugadorTarget, x10, y10));
                                         jugadorTmp.combo--;
                                     }
+                                    else
+                                        mandarConsola("No tienes suficientes comboshots para atacar!");
+                                    }   
                                     else if(arma.equals("nave")){
                                         if(jugadorTmp.nave > 0 ){
                                             mandarConsolaTodas(Nave.revelar(jugadorTarget, x, y));
+                                            jugadorTmp.nave--;
+                                            System.out.println("terminó el comando de la nave");
                                         }
                                     }
-                                    else
-                                        mandarConsola("No tienes suficientes comboshots para atacar!");
-                                }
                             jugadorTarget.setVisibilidad();
                             jugadorTarget.setRevisados();
                             jugadorTmp.setVisibilidad();

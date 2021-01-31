@@ -17,6 +17,7 @@ public class Nave {
         
         String res = "La nave visito la casilla ("+x+","+y+") del jugador "+victima.nombre+" y revelo un radio de 3 casillas";
         sleep(90000);
+        System.out.println("ya salio");
         for(int i = 0; i < victima.tablero.length;i++){
             for(int j = 0; j < victima.tablero[i].length;j++){
                 double distancia = Math.sqrt(((x-j)*(x-j))+((y-i)*(y-i)));
