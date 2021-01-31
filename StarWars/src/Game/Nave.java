@@ -50,7 +50,7 @@ public class Nave extends Thread{
     public void run(){
         String res = "La nave visito la casilla ("+x+","+y+") del jugador "+victima.nombre+" y revelo un radio de 3 casillas";
         try {
-            sleep(90000);
+            sleep(10000);
             
             
             for(int i = 0; i < victima.tablero.length;i++){
