@@ -106,6 +106,9 @@ public class Mundo extends Componentes {
 
     @Override
     public int conectado() {
+        if(vida <= 0){
+            return 1;
+        }
         return 0;
     }
 
